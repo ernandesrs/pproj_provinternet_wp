@@ -29,7 +29,8 @@ require __DIR__ . '/../bootstrap.php';
             </a>
 
             <div class="w-full flex items-center">
-                <nav class="text-primary-1 font-medium ml-auto hidden xl:inline-flex">
+                <nav class="w-full xl:w-auto max-w-[80vw] sm:max-w-[250px] xl:max-w-none h-full xl:h-auto border xl:border-none shadow-lg xl:shadow-none fixed xl:relative top-0 left-0 z-50 px-4 xl:px-0 py-6 xl:py-0 bg-gray-50 xl:bg-transparent text-primary-1 flex flex-col xl:flex-row duration-300 -translate-x-full xl:translate-x-0 xl:ml-auto"
+                    id="jsNavigation">
                     <?php
 
                     $navigations = [
@@ -58,8 +59,9 @@ require __DIR__ . '/../bootstrap.php';
                     foreach ($navigations as $nav):
                         $nav = (object) $nav;
                         ?>
-                        <a class="px-6 py-3 hover:text-primary-4 duration-300" href="<?= $nav->href ?>"
-                            target="<?= $nav->target ?? '_self' ?>" title="<?= $nav->title ?? $nav->text ?>">
+                        <a class="px-6 py-3 hover:pl-7 xl:hover:pl-6 hover:text-primary-4 duration-300"
+                            href="<?= $nav->href ?? '' ?>" target="<?= $nav->target ?? '_self' ?>"
+                            title="<?= $nav->title ?? $nav->text ?>">
                             <?= $nav->text ?>
                         </a>
                         <?php
@@ -78,6 +80,12 @@ require __DIR__ . '/../bootstrap.php';
                     'target' => '_blank'
                 ]);
                 ?>
+
+                <button class="xl:hidden text-basi-4 pl-4" id="jsNavigationToggler">
+                    <?php render_component('icon', [
+                        'icon' => 'menu'
+                    ]) ?>
+                </button>
             </div>
         </div>
     </header>
