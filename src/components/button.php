@@ -6,6 +6,8 @@
  * 
  * ##Component props
  * |Prop|Allowed values|
+ * |appendIcon|A valid icon name on Google Icons|
+ * |prependIcon|A valid icon name on Google Icons|
  * |variant|primary,primary-outlined|
  * |size|small,base,large|
  * |id||
@@ -28,13 +30,15 @@ $variants = [
 $sizes = [
     'small' => 'px-6 py-3 text-sm',
     'base' => 'px-8 py-3 text-base',
-    'large' => 'px-9 py-4 text-lg'
+    'large' => 'px-10 py-4 text-lg'
 ];
 
 /**
  * 
  * Component definitions
  */
+$appendIcon = $appendIcon ?? null;
+$prependIcon = $prependIcon ?? null;
 $variant = $variants[$variant ?? 'primary'];
 $size = $sizes[$size ?? 'base'];
 $attributes = array_filter([
@@ -52,7 +56,8 @@ $attributes = array_filter([
  * 
  */
 $class = [
-    'rounded-3xl',
+    'rounded-full bg-opacity-90 hover:bg-opacity-100 duration-300 hover:scale-105',
+    ($prependIcon || $appendIcon) ? 'inline-flex items-center gap-3' : '',
     $size,
     $variant
 ];
@@ -60,5 +65,25 @@ $class = [
 ?>
 
 <a class="<?= implode(" ", $class) ?>" <?= implode(' ', $attributes) ?>>
-    <?= $text ?>
+
+    <?php
+
+    if ($prependIcon) {
+        render_component('icon', [
+            'name' => $prependIcon,
+            'style' => 'pointer-events-none'
+        ]);
+    }
+
+    echo $text;
+
+    if ($appendIcon) {
+        render_component('icon', [
+            'name' => $appendIcon,
+            'style' => 'pointer-events-none'
+        ]);
+    }
+
+    ?>
+
 </a>

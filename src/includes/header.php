@@ -17,4 +17,4 @@ require __DIR__ . '/../bootstrap.php';
     <title>Net Fácil</title>
 </head>
 
-<body>
+<body class="w-full min-h-screen flex items-center">

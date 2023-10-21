@@ -7,18 +7,7 @@ render_component('button', [
     'href' => '#planos',
     'title' => 'Ver todos os nossos planos',
     'size' => 'large',
-    'append-icon' => null,
-    'prepend-icon' => null
-]);
-
-?>
-
-<hr>
-
-<?php
-
-render_component('icon', [
-    'name' => 'home'
+    'prependIcon' => 'arrow_back'
 ]);
 
 ?>
