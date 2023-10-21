@@ -1,7 +1,7 @@
 <!-- banner -->
-<div class="container min-h-[85vh] flex items-center py-8">
+<div class="container min-h-[85vh] flex items-center py-16 lg:py-9">
 
-    <div class="flex flex-col lg:flex-row">
+    <div class="flex flex-wrap justify-center">
         <div class="basis-full lg:basis-6/12 p-6 flex items-center justify-center mb-8 lg:mb-0 lg:order-12">
             <div class="banner-ilustration">
 
@@ -29,7 +29,7 @@
             </div>
         </div>
 
-        <div class="basis-full lg:basis-6/12 lg:order-1">
+        <div class="basis-full sm:basis-10/12 lg:basis-6/12 lg:order-1 flex flex-col justify-center">
             <div class="mb-7 text-center lg:text-left">
                 <h1 class="text-basi-2 text-4xl lg:text-5xl font-bold text-dark-2 mb-7 lg:pr-3">
                     Assista, navegue e jogue ao mesmo tempo!
