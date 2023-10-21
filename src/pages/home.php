@@ -1,4 +1,6 @@
-<?php render_component('button', [
+<?php
+
+render_component('button', [
     'id' => 'jsQueroInternet',
     'text' => 'Eu quero internet',
     'variant' => 'primary',
@@ -7,4 +9,16 @@
     'size' => 'large',
     'append-icon' => null,
     'prepend-icon' => null
-]) ?>
+]);
+
+?>
+
+<hr>
+
+<?php
+
+render_component('icon', [
+    'name' => 'home'
+]);
+
+?>
