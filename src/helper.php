@@ -19,7 +19,7 @@ function url(?string $path = null)
  */
 function asset(string $resource)
 {
-    return url() . '/assets/' . (str_starts_with($resource, '/') ? $resource : '/' . $resource);
+    return url() . '/assets' . (str_starts_with($resource, '/') ? $resource : '/' . $resource);
 }
 
 /**

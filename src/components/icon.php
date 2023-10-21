@@ -6,7 +6,7 @@
  * 
  * ##Component props
  * |Prop|Allowed values|
- * |name|The icon name on Google Font Icon|
+ * |icon|The icon name on Google Font Icon, a valid svg or a full url to the icon|
  * |style|Tailwind CSS classes|
  * 
  */
@@ -15,8 +15,21 @@
  * 
  * Component definitions
  */
-$name = $name ?? null;
+$icon = $icon ?? null;
+$name = null;
+$svg = null;
+$url = null;
 $style = $style ?? null;
+
+if ($icon) {
+    if (str_starts_with($icon, 'http')) {
+        $url = $icon;
+    } else if (str_contains($icon, '<svg')) {
+        $svg = $icon;
+    } else {
+        $name = $icon;
+    }
+}
 
 /**
  * 
@@ -36,4 +49,8 @@ $class = array_filter([
     <span class="<?= implode(' ', $class) ?>">
         <?= $name ?>
     </span>
+<?php elseif ($svg): ?>
+    <?= $svg ?>
+<?php elseif ($url): ?>
+    <img src="<?= $url ?>" alt="Icon">
 <?php endif; ?>

@@ -6,8 +6,8 @@
  * 
  * ##Component props
  * |Prop|Allowed values|
- * |appendIcon|A valid icon name on Google Icons|
- * |prependIcon|A valid icon name on Google Icons|
+ * |appendIcon|A valid icon name on Google Icons, a full url to the icon or a valid svg|
+ * |prependIcon|A valid icon name on Google Icons, a full url to the icon or a valid svg|
  * |variant|primary,primary-outlined|
  * |size|small,base,large|
  * |id||
@@ -70,7 +70,7 @@ $class = [
 
     if ($prependIcon) {
         render_component('icon', [
-            'name' => $prependIcon,
+            'icon' => $prependIcon,
             'style' => 'pointer-events-none'
         ]);
     }
@@ -79,7 +79,7 @@ $class = [
 
     if ($appendIcon) {
         render_component('icon', [
-            'name' => $appendIcon,
+            'icon' => $appendIcon,
             'style' => 'pointer-events-none'
         ]);
     }

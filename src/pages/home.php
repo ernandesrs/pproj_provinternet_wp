@@ -7,7 +7,7 @@ render_component('button', [
     'href' => '#planos',
     'title' => 'Ver todos os nossos planos',
     'size' => 'large',
-    'prependIcon' => 'arrow_back'
+    'prependIcon' => asset('icon/whatsapp-white.svg')
 ]);
 
 ?>
