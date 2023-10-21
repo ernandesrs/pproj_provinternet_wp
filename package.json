@@ -1,0 +1,9 @@
+{
+  "devDependencies": {
+    "tailwindcss": "^3.3.3"
+  },
+  "scripts": {
+    "tailwinddev": "tailwindcss -i ./src/css/style.css -o ./assets/css/style.css --watch",
+    "tailwindprod": "tailwindcss -i ./src/css/style.css -o ./assets/css/style.css --minify"
+  }
+}
