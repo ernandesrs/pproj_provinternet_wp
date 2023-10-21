@@ -14,6 +14,7 @@
  * |href||
  * |title||
  * |target|_self,_blank|
+ * |style|A valid Tailwind CSS classes|
  * 
  */
 
@@ -49,6 +50,7 @@ $attributes = array_filter([
 ], function ($i) {
     return empty($i) ? null : $i;
 });
+$style = $style ?? null;
 
 /**
  * 
@@ -59,7 +61,8 @@ $class = [
     'rounded-full bg-opacity-90 hover:bg-opacity-100 duration-300 hover:scale-105',
     ($prependIcon || $appendIcon) ? 'inline-flex items-center gap-3' : '',
     $size,
-    $variant
+    $variant,
+    $style
 ];
 
 ?>
