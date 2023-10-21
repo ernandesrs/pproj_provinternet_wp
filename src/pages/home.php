@@ -31,10 +31,10 @@
 
         <div class="basis-full sm:basis-10/12 lg:basis-6/12 lg:order-1 flex flex-col justify-center">
             <div class="mb-7 text-center lg:text-left">
-                <h1 class="text-basi-2 text-4xl lg:text-5xl font-bold text-dark-2 mb-7 lg:pr-3">
+                <h1 class="text-basi-2 text-4xl lg:text-5xl font-semibold mb-7">
                     Assista, navegue e jogue ao mesmo tempo!
                 </h1>
-                <p class="text-basi-4 text-lg lg:text-xl font-medium text-dark-4 lg:pr-28">
+                <p class="text-basi-4 text-lg lg:text-xl font-medium lg:pr-28">
                     É isso mesmo! Nossa internet via fibra possui
                     alta estabilidade e baixa latência, permitindo
                     que você faça <span class="text-primary-1">tudo ao mesmo tempo</span>!

@@ -628,10 +628,6 @@ video {
   flex-basis: 100%;
 }
 
-.basis-8\/12 {
-  flex-basis: 66.666667%;
-}
-
 .flex-col {
   flex-direction: column;
 }
@@ -683,21 +679,6 @@ video {
   background-color: rgb(251 37 37 / var(--tw-bg-opacity));
 }
 
-.bg-slate-400 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(148 163 184 / var(--tw-bg-opacity));
-}
-
-.bg-green-200 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(187 247 208 / var(--tw-bg-opacity));
-}
-
-.bg-red-200 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(254 202 202 / var(--tw-bg-opacity));
-}
-
 .bg-opacity-90 {
   --tw-bg-opacity: 0.9;
 }
@@ -721,6 +702,11 @@ video {
   padding-right: 2rem;
 }
 
+.py-16 {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
 .py-3 {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
@@ -729,21 +715,6 @@ video {
 .py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
-}
-
-.py-8 {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-}
-
-.py-14 {
-  padding-top: 3.5rem;
-  padding-bottom: 3.5rem;
-}
-
-.py-16 {
-  padding-top: 4rem;
-  padding-bottom: 4rem;
 }
 
 .text-center {
@@ -770,12 +741,12 @@ video {
   line-height: 1.25rem;
 }
 
-.font-bold {
-  font-weight: 700;
-}
-
 .font-medium {
   font-weight: 500;
+}
+
+.font-semibold {
+  font-weight: 600;
 }
 
 .text-basi-11 {
@@ -807,15 +778,23 @@ body {
   width: 100%;
   --tw-bg-opacity: 1;
   background-color: rgb(255 244 244 / var(--tw-bg-opacity));
+  font-family: 'Poppins', sans-serif;
 }
 
 .container {
   margin-left: auto;
   margin-right: auto;
   width: 100%;
-  max-width: 1280px;
-  padding-left: 2.5rem;
-  padding-right: 2.5rem;
+  max-width: 1285px;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
 }
 
 /**
@@ -920,20 +899,6 @@ body {
   .sm\:basis-10\/12 {
     flex-basis: 83.333333%;
   }
-
-  .sm\:basis-8\/12 {
-    flex-basis: 66.666667%;
-  }
-}
-
-@media (min-width: 768px) {
-  .md\:basis-5\/12 {
-    flex-basis: 41.666667%;
-  }
-
-  .md\:basis-7\/12 {
-    flex-basis: 58.333333%;
-  }
 }
 
 @media (min-width: 1024px) {
@@ -953,18 +918,6 @@ body {
     flex-basis: 50%;
   }
 
-  .lg\:basis-5\/12 {
-    flex-basis: 41.666667%;
-  }
-
-  .lg\:basis-7\/12 {
-    flex-basis: 58.333333%;
-  }
-
-  .lg\:flex-row {
-    flex-direction: row;
-  }
-
   .lg\:justify-start {
     justify-content: flex-start;
   }
@@ -976,10 +929,6 @@ body {
 
   .lg\:pr-28 {
     padding-right: 7rem;
-  }
-
-  .lg\:pr-3 {
-    padding-right: 0.75rem;
   }
 
   .lg\:text-left {
@@ -1004,9 +953,5 @@ body {
 
   .xl\:inline-flex {
     display: inline-flex;
-  }
-
-  .xl\:basis-6\/12 {
-    flex-basis: 50%;
   }
 }
