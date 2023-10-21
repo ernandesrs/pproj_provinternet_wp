@@ -83,6 +83,7 @@ require __DIR__ . '/../bootstrap.php';
 
                 <button class="xl:hidden text-basi-4 pl-4" id="jsNavigationToggler">
                     <?php render_component('icon', [
+                        'style' => 'pointer-events-none',
                         'icon' => 'menu'
                     ]) ?>
                 </button>
