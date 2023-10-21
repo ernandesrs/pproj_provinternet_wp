@@ -73,8 +73,9 @@ require __DIR__ . '/../bootstrap.php';
                     'style' => 'ml-auto xl:ml-10',
                     'size' => 'base',
                     'text' => 'Eu quero internet',
-                    'href' => '#planos',
-                    'prependIcon' => asset('icon/whatsapp-white.svg')
+                    'href' => 'https://api.whatsapp.com/send?phone=' . CONF_WHATSAPP_NUMBER,
+                    'prependIcon' => asset('icon/whatsapp-white.svg'),
+                    'target' => '_blank'
                 ]);
                 ?>
             </div>

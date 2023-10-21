@@ -31,8 +31,7 @@
 
         <div class="basis-full sm:basis-10/12 lg:basis-6/12 lg:order-1 flex flex-col justify-center">
             <div class="mb-7 text-center lg:text-left">
-                <h1 class="text-basi-2 text-4xl lg:text-5xl font-semibold mb-7"
-                    style="line-height:135%;">
+                <h1 class="text-basi-2 text-4xl lg:text-5xl font-semibold mb-7" style="line-height:135%;">
                     Assista, navegue e jogue ao mesmo tempo!
                 </h1>
                 <p class="text-basi-4 text-lg lg:text-xl font-medium lg:pr-28" style="letter-spacing: 1px;">
@@ -47,7 +46,8 @@
                 render_component('button', [
                     'prependIcon' => asset('icon/whatsapp-white.svg'),
                     'text' => 'Eu quero internet',
-                    'href' => 'https://api.whatsapp.com/send?phone=' . CONF_WHATSAPP_NUMBER
+                    'href' => 'https://api.whatsapp.com/send?phone=' . CONF_WHATSAPP_NUMBER,
+                    'target' => '_blank'
                 ]);
 
                 render_component('button', [
