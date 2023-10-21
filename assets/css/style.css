@@ -779,6 +779,7 @@ body {
   --tw-bg-opacity: 1;
   background-color: rgb(255 244 244 / var(--tw-bg-opacity));
   font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
 }
 
 .container {

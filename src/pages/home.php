@@ -31,16 +31,17 @@
 
         <div class="basis-full sm:basis-10/12 lg:basis-6/12 lg:order-1 flex flex-col justify-center">
             <div class="mb-7 text-center lg:text-left">
-                <h1 class="text-basi-2 text-4xl lg:text-5xl font-semibold mb-7">
+                <h1 class="text-basi-2 text-4xl lg:text-5xl font-semibold mb-7"
+                    style="line-height:135%;">
                     Assista, navegue e jogue ao mesmo tempo!
                 </h1>
-                <p class="text-basi-4 text-lg lg:text-xl font-medium lg:pr-28">
+                <p class="text-basi-4 text-lg lg:text-xl font-medium lg:pr-28" style="letter-spacing: 1px;">
                     É isso mesmo! Nossa internet via fibra possui
                     alta estabilidade e baixa latência, permitindo
                     que você faça <span class="text-primary-1">tudo ao mesmo tempo</span>!
                 </p>
             </div>
-            <div class="flex gap-6 justify-center lg:justify-start">
+            <div class="flex flex-wrap gap-6 justify-center lg:justify-start">
                 <?php
 
                 render_component('button', [
