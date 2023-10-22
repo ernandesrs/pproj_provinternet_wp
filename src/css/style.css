@@ -41,3 +41,12 @@ body {
 .banner-ilustration>.hightlight>span {
     @apply text-base font-medium text-basi-3 text-opacity-75;
 }
+
+.circle-decoration {
+    @apply opacity-5 w-[725px] h-[725px] border-4 border-dashed border-primary-1 absolute top-0 left-0 rounded-full pointer-events-none -translate-x-3/4;
+}
+
+.circle-decoration::after {
+    content: '';
+    @apply w-[575px] h-[575px] top-[75px] left-[75px] border-4 border-primary-1 absolute rounded-full;
+}

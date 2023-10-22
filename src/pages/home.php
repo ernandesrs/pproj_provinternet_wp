@@ -152,7 +152,8 @@
 <!-- /plans -->
 
 <!-- clients -->
-<div class="container min-h-[100vh] flex flex-col justify-center py-16 lg:py-9">
+<div class="container min-h-[100vh] flex flex-col justify-center py-16 lg:py-9 relative">
+    <div class="circle-decoration"></div>
 
     <div class="flex flex-wrap justify-center">
         <div class="sm:basis-8/12 lg:basis-5/12 font-bold text-center lg:text-left mb-10 lg:mb-0">
