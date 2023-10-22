@@ -78,6 +78,55 @@ const smoothScroll = {
             });
         });
     }
-}
+};
 
-export { navigation, smoothScroll };
+const fixedHeader = {
+    header: null,
+    content: null,
+    headerHeight: null,
+    isFixed: false,
+
+    start(header = '#jsHeader', content = '#jsContent') {
+        this.header = document.querySelector(header);
+        this.content = document.querySelector(content);
+
+        if (!this.header || !this.content) {
+            throw new Error('The header or content html element not found.');
+        }
+
+        this.headerHeight = this.header.offsetHeight;
+
+        this.setScrollEventListener();
+    },
+
+    setScrollEventListener() {
+        window.addEventListener('scroll', () => {
+            // fix the header
+            if (window.scrollY > this.headerHeight - (this.headerHeight * .25)) {
+                if (!this.isFixed) {
+                    this.header.style.position = 'fixed';
+                    this.header.style.zIndex = '999';
+                    this.header.style.minHeight = (this.headerHeight - (this.headerHeight * .25)) + 'px';
+                    this.header.style.height = (this.headerHeight - (this.headerHeight * .25)) + 'px';
+
+                    this.content.style.marginTop = (this.headerHeight + ((this.headerHeight * (.25 * 2)))) + 'px';
+
+                    this.isFixed = true;
+                }
+            } else {
+                // unfix the header
+                if (this.isFixed) {
+                    this.header.style.position = 'relative';
+                    this.header.style.minHeight = this.headerHeight + 'px';
+                    this.header.style.height = this.headerHeight + 'px';
+
+                    this.content.style.marginTop = '0px';
+
+                    this.isFixed = false;
+                }
+            }
+        });
+    }
+};
+
+export { navigation, smoothScroll, fixedHeader };

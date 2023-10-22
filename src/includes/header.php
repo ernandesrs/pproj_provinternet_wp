@@ -22,7 +22,7 @@ require __DIR__ . '/../bootstrap.php';
 
 <body>
 
-    <header class="min-h-[100px] border-b-2 border-primary-4 flex items-center">
+    <header id="jsHeader" class="w-full min-h-[100px] bg-basi-11 py-2 border-b-2 border-primary-4 flex items-center">
         <div class="container flex">
             <a href="<?= url() ?>" title="<?= CONF_NAME ?> Página Inicial">
                 <img src="<?= asset('img/logo.svg') ?>" alt="<?= CONF_NAME ?> Logo">
