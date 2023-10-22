@@ -150,3 +150,88 @@
     </div>
 </div>
 <!-- /plans -->
+
+<!-- clients -->
+<div class="container min-h-[100vh] flex flex-col justify-center py-16 lg:py-9">
+
+    <div class="flex flex-wrap justify-center">
+        <div class="sm:basis-8/12 lg:basis-5/12 font-bold text-center lg:text-left mb-10 lg:mb-0">
+            <h1 class="text-basi-5 text-2xl lg:text-3xl mb-3">
+                Clientes
+            </h1>
+            <h2 class="text-basi-2 text-4xl lg:text-5xl" style="line-height:120%;">
+                O que dizem alguns de nossos clientes
+            </h2>
+            <div class="mt-10">
+                <?php render_component('button', [
+                    'variant' => 'primary-outlined',
+                    'prependIcon' => 'arrow_upward',
+                    'text' => 'Escolher um plano',
+                    'href' => '#planos'
+                ]) ?>
+            </div>
+        </div>
+
+        <div class="lg:basis-7/12 px-2 flex flex-wrap">
+            <?php
+
+            $testmonials = [
+                [
+                    'client_name' => 'Client Name',
+                    'title' => 'Lorem ipsum dolor',
+                    'testmonial' => 'Lorem ipsum dolor, natus dolor sitin datus. Only nutis uistu loken nadis ilastu unranin ila nanad uiqui.',
+                    'avatar' => asset('img/client-thumb.png')
+                ],
+                [
+                    'client_name' => 'Client Name',
+                    'title' => 'Lorem ipsum dolor',
+                    'testmonial' => 'Lorem ipsum dolor, natus dolor sitin datus. Only nutis uistu loken nadis ilastu unranin ila nanad uiqui.',
+                    'avatar' => asset('img/client-thumb.png')
+                ],
+                [
+                    'client_name' => 'Client Name',
+                    'title' => 'Lorem ipsum dolor',
+                    'testmonial' => 'Lorem ipsum dolor, natus dolor sitin datus. Only nutis uistu loken nadis ilastu unranin ila nanad uiqui.',
+                    'avatar' => asset('img/client-thumb.png')
+                ],
+                [
+                    'client_name' => 'Client Name',
+                    'title' => 'Lorem ipsum dolor',
+                    'testmonial' => 'Lorem ipsum dolor, natus dolor sitin datus. Only nutis uistu loken nadis ilastu unranin ila nanad uiqui.',
+                    'avatar' => asset('img/client-thumb.png')
+                ]
+            ];
+
+            foreach ($testmonials as $test):
+                $test = (object) $test;
+                ?>
+                <div class="sm:basis-6/12 p-3">
+                    <div class="shadow-lg rounded-3xl p-4">
+                        <div class="flex">
+                            <div class="w-14 h-14 overflow-hidden rounded-full relative">
+                                <img class="absolute top-0 left-0" src="<?= $test->avatar ?>"
+                                    alt="<?= $test->client_name ?>">
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-basi-4 text-xl font-medium">
+                                    <?= $test->title ?>
+                                </h3>
+                                <h6 class="text-basi-6 text-xs">
+                                    <?= $test->client_name ?>
+                                </h6>
+                            </div>
+                        </div>
+                        <div class="py-3 text-base font-normal text-basi-5">
+                            <?= $test->testmonial ?>
+                        </div>
+                    </div>
+                </div>
+                <?php
+            endforeach;
+
+            ?>
+        </div>
+    </div>
+
+</div>
+<!-- /clients -->
