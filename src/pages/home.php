@@ -64,3 +64,89 @@
 
 </div>
 <!-- /banner -->
+
+<!-- plans -->
+<div class="container min-h-[100vh] flex flex-col justify-center py-16 lg:py-9">
+    <div class="w-full flex flex-wrap justify-center">
+        <div class="basis-10/12 sm:basis-8/12 md:basis-6/12 lg:basis-5/12 font-bold text-center py-10">
+            <h1 class="text-basi-5 text-2xl lg:text-3xl mb-3">Planos</h1>
+            <h2 class="text-basi-2 text-4xl lg:text-5xl" style="line-height:120%;">Confira todos os nossos planos</h2>
+        </div>
+    </div>
+
+    <div class="w-full flex flex-wrap justify-center">
+        <?php
+
+        $plans = [
+            [
+                'title' => '50 MEGAS',
+                'features' => [
+                    'Download: 6,25 MB/s',
+                    'Upload: 6,25 MB/s',
+                    'Instalação grátis',
+                    'Roteador grátis*',
+                ],
+                'url' => '#'
+            ],
+            [
+                'title' => '75 MEGAS',
+                'features' => [
+                    'Download: 12,25 MB/s',
+                    'Upload: 12,25 MB/s',
+                    'Instalação grátis',
+                    'Roteador grátis*',
+                ],
+                'url' => '#'
+            ],
+            [
+                'title' => '125 MEGAS',
+                'features' => [
+                    'Download: 16,25 MB/s',
+                    'Upload: 16,25 MB/s',
+                    'Instalação grátis',
+                    'Roteador grátis*',
+                ],
+                'url' => '#'
+            ]
+        ];
+
+        foreach ($plans as $plan):
+            $plan = (object) $plan;
+
+            [$titleA, $titleB] = explode(' ', $plan->title);
+            ?>
+            <div class="basis-full sm:basis-5/12 lg:basis-4/12 xl:basis-3/12 p-6 mb-6">
+
+                <div class="shadow-xl p-4 rounded-[100px]">
+                    <div class="shadow-lg px-4 py-6 rounded-[100px] text-center text-basi-4 font-semibold">
+                        <span class="block text-6xl">
+                            <?= $titleA ?>
+                        </span>
+                        <span class="block text-2xl">
+                            <?= $titleB ?>
+                        </span>
+                    </div>
+                    <div class="px-4 py-5">
+                        <ul class="font-semibold text-base text-basi-3 text-center">
+                            <?php foreach ($plan->features as $feature): ?>
+                                <li class="py-1">
+                                    <?= $feature ?>
+                                </li>
+                            <?php endforeach; ?>
+                        </ul>
+                    </div>
+                    <div class="text-center translate-y-5">
+                        <?php render_component('button', [
+                            'text' => 'Eu quer este',
+                            'href' => $plan->url
+                        ]) ?>
+                    </div>
+                </div>
+
+            </div>
+            <?php
+        endforeach;
+        ?>
+    </div>
+</div>
+<!-- /plans -->
