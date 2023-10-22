@@ -41,17 +41,17 @@ require __DIR__ . '/../bootstrap.php';
                         ],
                         [
                             'text' => 'Nossos planos',
-                            'href' => '#planos',
+                            'href' => '#plans',
                             'title' => 'Nossos planos'
                         ],
                         [
                             'text' => 'Entrar em contato',
-                            'href' => '#contato',
+                            'href' => '#contact',
                             'title' => 'Entrar em contato'
                         ],
                         [
                             'text' => 'Sobre nós',
-                            'href' => '#sobre-nos',
+                            'href' => '#about-us',
                             'title' => 'Sobre nós'
                         ]
                     ];

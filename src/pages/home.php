@@ -1,5 +1,5 @@
 <!-- banner -->
-<div class="container min-h-[85vh] flex items-center py-16 lg:py-9">
+<div id="top" class="container min-h-[85vh] flex items-center py-16 lg:py-9">
 
     <div class="flex flex-wrap justify-center">
         <div class="basis-full lg:basis-6/12 p-6 flex items-center justify-center mb-8 lg:mb-0 lg:order-12">
@@ -54,7 +54,7 @@
                     'prependIcon' => 'arrow_downward',
                     'variant' => 'primary-outlined',
                     'text' => 'Quero ver os planos',
-                    'href' => '#planos'
+                    'href' => '#plans'
                 ]);
 
                 ?>
@@ -66,7 +66,7 @@
 <!-- /banner -->
 
 <!-- plans -->
-<div class="container min-h-[100vh] flex flex-col justify-center py-16 lg:py-9">
+<div id="plans" class="container min-h-[100vh] flex flex-col justify-center py-16 lg:py-9">
     <div class="w-full flex flex-wrap justify-center">
         <div class="basis-10/12 sm:basis-8/12 md:basis-6/12 lg:basis-5/12 font-bold text-center py-10">
             <h1 class="text-basi-5 text-2xl lg:text-3xl mb-3">Planos</h1>
@@ -152,7 +152,7 @@
 <!-- /plans -->
 
 <!-- clients -->
-<div class="container min-h-[100vh] flex flex-col justify-center py-16 lg:py-9 relative">
+<div id="testmonials" class="container min-h-[100vh] flex flex-col justify-center py-16 lg:py-9 relative">
     <div class="circle-decoration"></div>
 
     <div class="flex flex-wrap justify-center">
@@ -168,7 +168,7 @@
                     'variant' => 'primary-outlined',
                     'prependIcon' => 'arrow_upward',
                     'text' => 'Escolher um plano',
-                    'href' => '#planos'
+                    'href' => '#plans'
                 ]) ?>
             </div>
         </div>
