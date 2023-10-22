@@ -236,3 +236,93 @@
 
 </div>
 <!-- /clients -->
+
+<!-- location/contact -->
+<div id="contact" class="min-h-[100vh] flex justify-center items-center py-16 lg:py-9 relative bg-basi-0 text-basi-11">
+    <div class="container flex flex-wrap">
+        <div class="basis-full lg:basis-6/12 flex flex-col items-center lg:items-start mb-12">
+            <h2 class="text-2xl lg:text-3xl text-primary-4 font-semibold mb-8">Nossa localização</h2>
+            <iframe class="rounded-3xl mb-8 w-full max-w-[600px] h-[350px]"
+                src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1907.9331951384584!2d-54.81767306054084!3d-22.178121299502063!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1spt-BR!2sbr!4v1698008075553!5m2!1spt-BR!2sbr"
+                style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div class="cursor-default">
+                <div class="flex">
+                    <?php render_component('icon', [
+                        'style' => 'text-5xl',
+                        'icon' => 'map'
+                    ]); ?>
+
+                    <div class="ml-3">
+                        <div class="text-base font-medium">Rua Lorem Ipsum, 246</div>
+                        <div class="text-sm">Lorem City, LS</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="basis-full lg:basis-6/12 px-10">
+            <div class="bg-primary-4 bg-opacity-90 h-full p-10 rounded-[35px]">
+                <h2 class="text-2xl lg:text-3xl font-semibold mb-8">Contate-nos</h2>
+                <div class="ml-5">
+                    <?php
+
+                    $contacts = [
+                        [
+                            'text' => '@netfacil',
+                            'href' => 'https://facebook.com/',
+                            'title' => '@netfacil no Facebook',
+                            'icon' => asset('icon/facebook-white.svg'),
+                            'target' => '_blank'
+                        ],
+                        [
+                            'text' => '@netfacil',
+                            'href' => 'https://instagram.com/',
+                            'title' => '@netfacil no Instagram',
+                            'icon' => asset('icon/instagram-white.svg'),
+                            'target' => '_blank'
+                        ],
+                        [
+                            'text' => '+55 00 0 0000-0000',
+                            'href' => 'https://api.whatsapp.com/tel=' . CONF_WHATSAPP_NUMBER,
+                            'title' => '@netfacil no Whatsapp',
+                            'icon' => asset('icon/whatsapp-white.svg'),
+                            'target' => '_blank'
+                        ],
+                        [
+                            'text' => 'lorem@ipsum.com',
+                            'href' => 'mailto:lorem@ipsum.com',
+                            'title' => '@netfacil via email',
+                            'icon' => asset('icon/envelope-white.svg'),
+                            'target' => '_blank'
+                        ],
+                        [
+                            'text' => '00 0 0000-0000',
+                            'href' => 'tel:00 0 0000-0000',
+                            'title' => 'Ligue para nós',
+                            'icon' => asset('icon/telephone-white.svg'),
+                            'target' => '_blank'
+                        ]
+                    ];
+
+                    foreach ($contacts as $contact):
+                        $contact = (object) $contact;
+                        ?>
+                        <a class="py-3 flex items-center" href="<?= $contact->href ?>"
+                            target="<?= $contact->target ?? '_self' ?>" title="<?= $contact->title ?? '' ?>">
+                            <?php render_component('icon', [
+                                'icon' => $contact->icon
+                            ]) ?>
+                            <span class="inline-block ml-2">
+                                <?= $contact->text ?>
+                            </span>
+                        </a>
+                        <?php
+                    endforeach;
+                    ?>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /location/contact -->
