@@ -206,9 +206,9 @@
             foreach ($testmonials as $test):
                 $test = (object) $test;
                 ?>
-                <div class="sm:basis-6/12 p-3">
-                    <div class="shadow-lg rounded-3xl p-4">
-                        <div class="flex">
+                <div class="sm:basis-6/12 p-2 cursor-default">
+                    <div class="shadow-lg rounded-3xl py-4 px-6">
+                        <div class="flex mb-3">
                             <div class="w-14 h-14 overflow-hidden rounded-full relative">
                                 <img class="absolute top-0 left-0" src="<?= $test->avatar ?>"
                                     alt="<?= $test->client_name ?>">
@@ -222,7 +222,7 @@
                                 </h6>
                             </div>
                         </div>
-                        <div class="py-3 text-base font-normal text-basi-5">
+                        <div class="text-base font-normal text-basi-5">
                             <?= $test->testmonial ?>
                         </div>
                     </div>
