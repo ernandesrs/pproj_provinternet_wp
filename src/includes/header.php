@@ -17,7 +17,7 @@ require __DIR__ . '/../bootstrap.php';
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     <link href="<?= asset('css/style.css') ?>" rel="stylesheet">
 
-    <title>Net Fácil</title>
+    <title><?= CONF_NAME ?></title>
 </head>
 
 <body>
@@ -40,19 +40,14 @@ require __DIR__ . '/../bootstrap.php';
                             'title' => 'Início'
                         ],
                         [
-                            'text' => 'Nossos planos',
+                            'text' => 'Planos',
                             'href' => '#plans',
                             'title' => 'Nossos planos'
                         ],
                         [
-                            'text' => 'Entrar em contato',
+                            'text' => 'Contato/Localização',
                             'href' => '#contact',
                             'title' => 'Entrar em contato'
-                        ],
-                        [
-                            'text' => 'Sobre nós',
-                            'href' => '#about-us',
-                            'title' => 'Sobre nós'
                         ]
                     ];
 

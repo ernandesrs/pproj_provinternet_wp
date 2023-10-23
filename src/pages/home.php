@@ -153,7 +153,7 @@
 
 <!-- clients -->
 <div id="testmonials" class="container min-h-[100vh] flex flex-col justify-center py-16 lg:py-9 relative">
-    <div class="circle-decoration"></div>
+    <div class="circle-decoration circle-on-left"></div>
 
     <div class="flex flex-wrap justify-center">
         <div class="sm:basis-8/12 lg:basis-5/12 font-bold text-center lg:text-left mb-10 lg:mb-0">
@@ -239,6 +239,8 @@
 
 <!-- location/contact -->
 <div id="contact" class="min-h-[100vh] flex justify-center items-center py-16 lg:py-9 relative bg-basi-0 text-basi-11">
+    <div class="circle-decoration circle-on-right"></div>
+
     <div class="container flex flex-wrap">
         <div class="basis-full lg:basis-6/12 flex flex-col items-center lg:items-start mb-12">
             <h2 class="text-2xl lg:text-3xl text-primary-4 font-semibold mb-8">Nossa localização</h2>
