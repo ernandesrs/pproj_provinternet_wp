@@ -13,5 +13,8 @@
     "tailwindwatch": "tailwindcss -i ./src/assets/css/main.css -o ./src/assets/css/styles.css --minify",
     "watch": "webpack --watch --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js"
+  },
+  "dependencies": {
+    "aos": "^2.3.4"
   }
 }

@@ -69,8 +69,8 @@
 <div id="plans" class="container min-h-[100vh] flex flex-col justify-center py-16 lg:py-9">
     <div class="w-full flex flex-wrap justify-center">
         <div class="basis-10/12 sm:basis-8/12 md:basis-6/12 lg:basis-5/12 font-bold text-center py-10">
-            <h1 class="text-basi-5 text-2xl lg:text-3xl mb-3">Planos</h1>
-            <h2 class="text-basi-2 text-4xl lg:text-5xl" style="line-height:120%;">Confira todos os nossos planos</h2>
+            <h1 class="text-basi-5 text-2xl lg:text-3xl mb-3" data-aos="fade-up">Planos</h1>
+            <h2 class="text-basi-2 text-4xl lg:text-5xl" data-aos="fade-up" data-aos-delay="250" style="line-height:120%;">Confira todos os nossos planos</h2>
         </div>
     </div>
 
@@ -110,12 +110,13 @@
             ]
         ];
 
-        foreach ($plans as $plan):
+        foreach ($plans as $key => $plan):
             $plan = (object) $plan;
 
             [$titleA, $titleB] = explode(' ', $plan->title);
             ?>
-            <div class="basis-full sm:basis-5/12 lg:basis-4/12 xl:basis-3/12 p-6 mb-6">
+            <div class="basis-full sm:basis-5/12 lg:basis-4/12 xl:basis-3/12 p-6 mb-6" data-aos="fade-left"
+                data-aos-duration="<?= 300 + (100 * (1 + $key)) ?>" data-aos-delay="<?= 200 + (100 * (1 + $key)) ?>">
 
                 <div class="shadow-xl p-4 rounded-[100px]">
                     <div class="shadow-lg px-4 py-6 rounded-[100px] text-center text-basi-4 font-semibold">
