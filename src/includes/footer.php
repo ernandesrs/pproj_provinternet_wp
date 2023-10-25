@@ -87,7 +87,7 @@
     </div>
 </footer>
 
-<script type="module" src="<?= asset('js/scripts.js') ?>"></script>
+<script type="module" src="<?= asset('dist/main.bundle.js') ?>"></script>
 </body>
 
 </html>
