@@ -116,7 +116,8 @@
 
             [$titleA, $titleB] = explode(' ', $plan->title);
             ?>
-            <div class="basis-full sm:basis-5/12 lg:basis-4/12 xl:basis-3/12 p-6 mb-6" data-aos="fade-left"
+            <div class="basis-full sm:basis-5/12 lg:basis-4/12 xl:basis-3/12 p-6 mb-6"
+                data-aos="<?= $key == 0 ? 'fade-right' : ($key == count($plans) - 1 ? 'fade-left' : 'fade-up') ?>"
                 data-aos-duration="<?= 300 + (100 * (1 + $key)) ?>" data-aos-delay="<?= 200 + (100 * (1 + $key)) ?>">
 
                 <div class="shadow-xl p-4 rounded-[100px]">
@@ -159,10 +160,11 @@
 
     <div class="flex flex-wrap justify-center">
         <div class="sm:basis-8/12 lg:basis-5/12 font-bold text-center lg:text-left mb-10 lg:mb-0">
-            <h1 class="text-basi-5 text-2xl lg:text-3xl mb-3">
+            <h1 class="text-basi-5 text-2xl lg:text-3xl mb-3" data-aos="zoom-in-right">
                 Clientes
             </h1>
-            <h2 class="text-basi-2 text-4xl lg:text-5xl" style="line-height:120%;">
+            <h2 class="text-basi-2 text-4xl lg:text-5xl" style="line-height:120%;" data-aos="zoom-in-right"
+                data-aos-delay="275">
                 O que dizem alguns de nossos clientes
             </h2>
             <div class="mt-10">
@@ -208,7 +210,8 @@
             foreach ($testmonials as $test):
                 $test = (object) $test;
                 ?>
-                <div class="sm:basis-6/12 p-2 cursor-default">
+                <div class="sm:basis-6/12 p-2 cursor-default" data-aos="zoom-in-left"
+                    data-aos-delay="<?= 200 + (100 * ($key + 1)) ?>">
                     <div class="shadow-lg rounded-3xl py-4 px-6">
                         <div class="flex mb-3">
                             <div class="w-14 h-14 overflow-hidden rounded-full relative">
