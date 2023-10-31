@@ -3,3 +3,4 @@ node_modules
 vendor
 config.php
 package-lock.json
+composer.lock

@@ -1,6 +1,9 @@
 <?php
 
+require __DIR__ . '/vendor/autoload.php';
+
 $page = 'home';
+
 if ($p = $_GET['page'] ?? null) {
     if (!file_exists(__DIR__ . '/src/pages/' . $p . '.php')) {
         header('Location: ' . \Helpers\Url::url());

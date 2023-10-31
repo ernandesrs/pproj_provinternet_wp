@@ -1,0 +1,17 @@
+{
+    "autoload": {
+        "psr-4": {
+            "Helpers\\": "src/helpers/"
+        },
+        "files": [
+            "config.php"
+        ]
+    },
+    "authors": [
+        {
+            "name": "Ernandes R Souza",
+            "email": "ernandesrsouza@gmail.com"
+        }
+    ],
+    "require": {}
+}
