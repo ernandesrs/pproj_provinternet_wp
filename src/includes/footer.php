@@ -29,7 +29,7 @@
                     </h3>
                     <nav class="flex flex-col text-primary-1 ml-2">
                         <?php
-                        foreach ([['text' => 'Termos de privacidade', 'href' => '#'], ['text' => 'Termos de serviço', 'href' => '#']] as $nav):
+                        foreach ([['text' => 'Termos de privacidade', 'href' => \Helpers\Url::url_privacy_terms_page()], ['text' => 'Termos de serviço', 'href' => '#']] as $nav):
                             $nav = (object) $nav;
                             ?>
                             <a class="py-2 hover:pl-1 duration-200 hover:text-basi-6" href="<?= $nav->href ?>"
@@ -86,6 +86,25 @@
         </div>
     </div>
 </footer>
+
+<!-- cookie alert -->
+<div class="w-full py-2 px-12 flex justify-center fixed bottom-0 left-0 z-50 translate-y-full" id="jsCookieAlert">
+    <div class="bg-basi-11 w-full max-w-[525px] py-5 px-10 shadow-xl border text-center text-basi-1 cursor-default">
+        <h5 class="font-semibold text-lg mb-2">Usamos cookies!</h5>
+        <p class="mb-6">Usamos cookies para aprimorar a experiência do usuário. Veja mais detalhes em nossos <a
+                class="text-primary-1" href="<?= \Helpers\Url::url_privacy_terms_page() ?>"
+                title="Termos de privacidade" target="_self">termos de
+                privacidade</a>.</p>
+        <div>
+            <?php \Helpers\Template::render_component('button', [
+                'style' => 'cursor-pointer',
+                'text' => 'Aceito os termos',
+                'id' => 'jsCookieAccept'
+            ]) ?>
+        </div>
+    </div>
+</div>
+<!-- cookie alert -->
 
 <script type="module" src="<?= \Helpers\Url::asset('dist/main.bundle.js') ?>"></script>
 </body>

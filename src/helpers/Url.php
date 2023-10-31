@@ -16,6 +16,16 @@ class Url
     }
 
     /**
+     * Terms page url
+     *
+     * @return string
+     */
+    static function url_privacy_terms_page()
+    {
+        return static::url('?page=terms');
+    }
+
+    /**
      * Asset
      *
      * @param string $resource
