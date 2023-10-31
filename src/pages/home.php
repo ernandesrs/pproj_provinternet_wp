@@ -65,6 +65,56 @@
 </div>
 <!-- /banner -->
 
+<!-- features -->
+<div class="bg-primary-4 py-16 lg:py-9 flex items-center" data-aos="fade-up">
+    <div class="container flex flex-wrap justify-center">
+        <?php
+
+        $features = [
+            [
+                'icon' => 'apps',
+                'title' => 'Consetur adipicing',
+                'description' => 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit, veniam.',
+            ],
+            [
+                'icon' => 'wifi',
+                'title' => 'Consetur adipicing',
+                'description' => 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit, veniam.',
+            ],
+            [
+                'icon' => 'support_agent',
+                'title' => 'Consetur adipising',
+                'description' => 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit, veniam.',
+            ]
+        ];
+        foreach ($features as $key => $feature):
+            $feature = (object) $feature;
+            ?>
+            <div class="sm:basis-6/12 lg:basis-4/12 text-basi-11 p-4 border border-primary-1 border-opacity-0 mb-5 lg:mb-0"
+                data-aos="fade-up" data-aos-duration="<?= 200 + (100 * ($key + 1)) ?>"
+                data-aos-delay="<?= 200 + (100 * ($key + 1)) ?>">
+                <div class="feature-card">
+                    <h4 class="feature-card-header">
+                        <?php \Helpers\Template::renderComponent('icon', [
+                            'style' => 'mb-3 text-5xl',
+                            'icon' => $feature->icon
+                        ]) ?>
+                        <span class="text-2xl">
+                            <?= $feature->title ?>
+                        </span>
+                    </h4>
+                    <p class="feature-card-text">
+                        <?= $feature->description ?>
+                    </p>
+                </div>
+            </div>
+            <?php
+        endforeach;
+        ?>
+    </div>
+</div>
+<!-- /features -->
+
 <!-- plans -->
 <div id="plans" class="container min-h-[100vh] flex flex-col justify-center py-16 lg:py-9">
     <div class="w-full flex flex-wrap justify-center">

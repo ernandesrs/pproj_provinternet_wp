@@ -21,6 +21,26 @@ body {
  * *
  *
  */
+ .feature-card {
+    @apply hover:bg-basi-11 rounded-2xl px-6 py-8 border border-primary-1 border-opacity-0 cursor-default duration-300;
+}
+
+.feature-card .feature-card-header {
+    @apply flex flex-col justify-center items-center text-basi-10 mb-4 uppercase font-medium text-center;
+}
+
+.feature-card .feature-card-text {
+    @apply font-normal text-lg text-basi-11 text-center;
+}
+
+.feature-card:hover .feature-card-header {
+    @apply text-primary-4;
+}
+
+.feature-card:hover .feature-card-text {
+    @apply text-basi-4;
+}
+
 .banner-ilustration {
     @apply z-0 flex items-center justify-center relative w-[275px] h-[275px] lg:w-[400px] lg:h-[400px] rounded-full border-[3px] border-primary-4 border-dashed;
 }
