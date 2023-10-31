@@ -11,7 +11,7 @@ class Template
      * @param array $data
      * @return void
      */
-    static function render_component(string $path, array $data = [])
+    static function renderComponent(string $path, array $data = [])
     {
         foreach ($data as $key => $value) {
             $$key = $value;

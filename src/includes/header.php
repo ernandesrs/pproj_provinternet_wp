@@ -61,7 +61,7 @@
 
                 <!-- button -->
                 <?php
-                \Helpers\Template::render_component('button', [
+                \Helpers\Template::renderComponent('button', [
                     'style' => 'ml-auto xl:ml-10',
                     'size' => 'base',
                     'text' => 'Eu quero internet',
@@ -72,7 +72,7 @@
                 ?>
 
                 <button class="xl:hidden text-basi-4 pl-4" id="jsNavigationToggler">
-                    <?php \Helpers\Template::render_component('icon', [
+                    <?php \Helpers\Template::renderComponent('icon', [
                         'style' => 'pointer-events-none',
                         'icon' => 'menu'
                     ]) ?>

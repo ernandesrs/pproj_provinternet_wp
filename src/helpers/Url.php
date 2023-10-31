@@ -20,7 +20,7 @@ class Url
      *
      * @return string
      */
-    static function url_privacy_terms_page()
+    static function urlPrivacyTermsPage()
     {
         return static::url('?page=terms');
     }

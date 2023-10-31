@@ -6,21 +6,21 @@
             <div class="banner-ilustration">
 
                 <div class="hightlight -top-8">
-                    <?php \Helpers\Template::render_component('icon', [
+                    <?php \Helpers\Template::renderComponent('icon', [
                         'icon' => 'router',
                         'style' => 'icon'
                     ]) ?><span>Roteador Dual Band</span>
                 </div>
 
                 <div class="hightlight -left-20">
-                    <?php \Helpers\Template::render_component('icon', [
+                    <?php \Helpers\Template::renderComponent('icon', [
                         'icon' => 'speed',
                         'style' => 'icon'
                     ]) ?><span>Alta Velocidade e Baixa Latência</span>
                 </div>
 
                 <div class="hightlight bottom-2 -right-20">
-                    <?php \Helpers\Template::render_component('icon', [
+                    <?php \Helpers\Template::renderComponent('icon', [
                         'icon' => 'wifi_tethering',
                         'style' => 'icon'
                     ]) ?><span>Via Fibra Ou Rádio</span>
@@ -43,14 +43,14 @@
             <div class="flex flex-wrap gap-6 justify-center lg:justify-start">
                 <?php
 
-                \Helpers\Template::render_component('button', [
+                \Helpers\Template::renderComponent('button', [
                     'prependIcon' => \Helpers\Url::asset('icon/whatsapp-white.svg'),
                     'text' => 'Eu quero internet',
                     'href' => 'https://api.whatsapp.com/send?phone=' . CONF_WHATSAPP_NUMBER,
                     'target' => '_blank'
                 ]);
 
-                \Helpers\Template::render_component('button', [
+                \Helpers\Template::renderComponent('button', [
                     'prependIcon' => 'arrow_downward',
                     'variant' => 'primary-outlined',
                     'text' => 'Quero ver os planos',
@@ -138,7 +138,7 @@
                         </ul>
                     </div>
                     <div class="text-center translate-y-5">
-                        <?php \Helpers\Template::render_component('button', [
+                        <?php \Helpers\Template::renderComponent('button', [
                             'text' => 'Eu quer este',
                             'href' => $plan->url
                         ]) ?>
@@ -166,7 +166,7 @@
                 O que dizem alguns de nossos clientes
             </h2>
             <div class="mt-10">
-                <?php \Helpers\Template::render_component('button', [
+                <?php \Helpers\Template::renderComponent('button', [
                     'variant' => 'primary-outlined',
                     'prependIcon' => 'arrow_upward',
                     'text' => 'Escolher um plano',
@@ -252,7 +252,7 @@
                 referrerpolicy="no-referrer-when-downgrade"></iframe>
             <div class="cursor-default">
                 <div class="flex">
-                    <?php \Helpers\Template::render_component('icon', [
+                    <?php \Helpers\Template::renderComponent('icon', [
                         'style' => 'text-5xl',
                         'icon' => 'map'
                     ]); ?>
@@ -314,7 +314,7 @@
                         ?>
                         <a class="py-3 flex items-center" href="<?= $contact->href ?>"
                             target="<?= $contact->target ?? '_self' ?>" title="<?= $contact->title ?? '' ?>">
-                            <?php \Helpers\Template::render_component('icon', [
+                            <?php \Helpers\Template::renderComponent('icon', [
                                 'icon' => $contact->icon
                             ]) ?>
                             <span class="inline-block ml-2">
