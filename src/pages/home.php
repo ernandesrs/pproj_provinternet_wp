@@ -1,5 +1,5 @@
 <!-- banner -->
-<div id="top" class="container min-h-[85vh] flex items-center py-16 lg:py-9">
+<div class="container min-h-[85vh] flex items-center py-16 lg:py-9">
 
     <div class="flex flex-wrap justify-center">
         <div class="basis-full lg:basis-6/12 p-6 flex items-center justify-center mb-8 lg:mb-0 lg:order-12">

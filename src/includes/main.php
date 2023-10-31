@@ -1,7 +1,7 @@
-<?php
+<main id="jsMain">
+    <?php
 
-$page = 'home';
+    include __DIR__ . '/../pages/' . $page . '.php';
 
-include __DIR__ . '/../pages/' . $page . '.php';
-
-?>
+    ?>
+</main>
