@@ -6,21 +6,21 @@
             <div class="banner-ilustration">
 
                 <div class="hightlight -top-8">
-                    <?php render_component('icon', [
+                    <?php \Helpers\Template::render_component('icon', [
                         'icon' => 'router',
                         'style' => 'icon'
                     ]) ?><span>Roteador Dual Band</span>
                 </div>
 
                 <div class="hightlight -left-20">
-                    <?php render_component('icon', [
+                    <?php \Helpers\Template::render_component('icon', [
                         'icon' => 'speed',
                         'style' => 'icon'
                     ]) ?><span>Alta Velocidade e Baixa Latência</span>
                 </div>
 
                 <div class="hightlight bottom-2 -right-20">
-                    <?php render_component('icon', [
+                    <?php \Helpers\Template::render_component('icon', [
                         'icon' => 'wifi_tethering',
                         'style' => 'icon'
                     ]) ?><span>Via Fibra Ou Rádio</span>
@@ -43,14 +43,14 @@
             <div class="flex flex-wrap gap-6 justify-center lg:justify-start">
                 <?php
 
-                render_component('button', [
-                    'prependIcon' => asset('icon/whatsapp-white.svg'),
+                \Helpers\Template::render_component('button', [
+                    'prependIcon' => \Helpers\Url::asset('icon/whatsapp-white.svg'),
                     'text' => 'Eu quero internet',
                     'href' => 'https://api.whatsapp.com/send?phone=' . CONF_WHATSAPP_NUMBER,
                     'target' => '_blank'
                 ]);
 
-                render_component('button', [
+                \Helpers\Template::render_component('button', [
                     'prependIcon' => 'arrow_downward',
                     'variant' => 'primary-outlined',
                     'text' => 'Quero ver os planos',
@@ -70,7 +70,8 @@
     <div class="w-full flex flex-wrap justify-center">
         <div class="basis-10/12 sm:basis-8/12 md:basis-6/12 lg:basis-5/12 font-bold text-center py-10">
             <h1 class="text-basi-5 text-2xl lg:text-3xl mb-3" data-aos="fade-up">Planos</h1>
-            <h2 class="text-basi-2 text-4xl lg:text-5xl" data-aos="fade-up" data-aos-delay="250" style="line-height:120%;">Confira todos os nossos planos</h2>
+            <h2 class="text-basi-2 text-4xl lg:text-5xl" data-aos="fade-up" data-aos-delay="250"
+                style="line-height:120%;">Confira todos os nossos planos</h2>
         </div>
     </div>
 
@@ -137,7 +138,7 @@
                         </ul>
                     </div>
                     <div class="text-center translate-y-5">
-                        <?php render_component('button', [
+                        <?php \Helpers\Template::render_component('button', [
                             'text' => 'Eu quer este',
                             'href' => $plan->url
                         ]) ?>
@@ -165,7 +166,7 @@
                 O que dizem alguns de nossos clientes
             </h2>
             <div class="mt-10">
-                <?php render_component('button', [
+                <?php \Helpers\Template::render_component('button', [
                     'variant' => 'primary-outlined',
                     'prependIcon' => 'arrow_upward',
                     'text' => 'Escolher um plano',
@@ -182,25 +183,25 @@
                     'client_name' => 'Client Name',
                     'title' => 'Lorem ipsum dolor',
                     'testmonial' => 'Lorem ipsum dolor, natus dolor sitin datus. Only nutis uistu loken nadis ilastu unranin ila nanad uiqui.',
-                    'avatar' => asset('img/client-thumb.png')
+                    'avatar' => \Helpers\Url::asset('img/client-thumb.png')
                 ],
                 [
                     'client_name' => 'Client Name',
                     'title' => 'Lorem ipsum dolor',
                     'testmonial' => 'Lorem ipsum dolor, natus dolor sitin datus. Only nutis uistu loken nadis ilastu unranin ila nanad uiqui.',
-                    'avatar' => asset('img/client-thumb.png')
+                    'avatar' => \Helpers\Url::asset('img/client-thumb.png')
                 ],
                 [
                     'client_name' => 'Client Name',
                     'title' => 'Lorem ipsum dolor',
                     'testmonial' => 'Lorem ipsum dolor, natus dolor sitin datus. Only nutis uistu loken nadis ilastu unranin ila nanad uiqui.',
-                    'avatar' => asset('img/client-thumb.png')
+                    'avatar' => \Helpers\Url::asset('img/client-thumb.png')
                 ],
                 [
                     'client_name' => 'Client Name',
                     'title' => 'Lorem ipsum dolor',
                     'testmonial' => 'Lorem ipsum dolor, natus dolor sitin datus. Only nutis uistu loken nadis ilastu unranin ila nanad uiqui.',
-                    'avatar' => asset('img/client-thumb.png')
+                    'avatar' => \Helpers\Url::asset('img/client-thumb.png')
                 ]
             ];
 
@@ -251,7 +252,7 @@
                 referrerpolicy="no-referrer-when-downgrade"></iframe>
             <div class="cursor-default">
                 <div class="flex">
-                    <?php render_component('icon', [
+                    <?php \Helpers\Template::render_component('icon', [
                         'style' => 'text-5xl',
                         'icon' => 'map'
                     ]); ?>
@@ -275,35 +276,35 @@
                             'text' => '@netfacil',
                             'href' => 'https://facebook.com/',
                             'title' => '@netfacil no Facebook',
-                            'icon' => asset('icon/facebook-white.svg'),
+                            'icon' => \Helpers\Url::asset('icon/facebook-white.svg'),
                             'target' => '_blank'
                         ],
                         [
                             'text' => '@netfacil',
                             'href' => 'https://instagram.com/',
                             'title' => '@netfacil no Instagram',
-                            'icon' => asset('icon/instagram-white.svg'),
+                            'icon' => \Helpers\Url::asset('icon/instagram-white.svg'),
                             'target' => '_blank'
                         ],
                         [
                             'text' => '+55 00 0 0000-0000',
                             'href' => 'https://api.whatsapp.com/tel=' . CONF_WHATSAPP_NUMBER,
                             'title' => '@netfacil no Whatsapp',
-                            'icon' => asset('icon/whatsapp-white.svg'),
+                            'icon' => \Helpers\Url::asset('icon/whatsapp-white.svg'),
                             'target' => '_blank'
                         ],
                         [
                             'text' => 'lorem@ipsum.com',
                             'href' => 'mailto:lorem@ipsum.com',
                             'title' => '@netfacil via email',
-                            'icon' => asset('icon/envelope-white.svg'),
+                            'icon' => \Helpers\Url::asset('icon/envelope-white.svg'),
                             'target' => '_blank'
                         ],
                         [
                             'text' => '00 0 0000-0000',
                             'href' => 'tel:00 0 0000-0000',
                             'title' => 'Ligue para nós',
-                            'icon' => asset('icon/telephone-white.svg'),
+                            'icon' => \Helpers\Url::asset('icon/telephone-white.svg'),
                             'target' => '_blank'
                         ]
                     ];
@@ -313,7 +314,7 @@
                         ?>
                         <a class="py-3 flex items-center" href="<?= $contact->href ?>"
                             target="<?= $contact->target ?? '_self' ?>" title="<?= $contact->title ?? '' ?>">
-                            <?php render_component('icon', [
+                            <?php \Helpers\Template::render_component('icon', [
                                 'icon' => $contact->icon
                             ]) ?>
                             <span class="inline-block ml-2">

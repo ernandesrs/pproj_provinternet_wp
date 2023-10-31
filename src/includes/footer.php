@@ -44,18 +44,18 @@
             </div>
 
             <div class="basis-full md:basis-5/12 flex items-start md:order-first">
-                <img src="<?= asset('img/logo-light.svg') ?>" alt="<?= CONF_NAME ?> FOOTER LOGO">
+                <img src="<?= \Helpers\Url::asset('img/logo-light.svg') ?>" alt="<?= CONF_NAME ?> FOOTER LOGO">
                 <div class="flex p-6 gap-4">
                     <?php
 
                     $socials = [
                         [
-                            'icon' => asset('icon/facebook-primary.svg'),
+                            'icon' => \Helpers\Url::asset('icon/facebook-primary.svg'),
                             'title' => 'Facebook',
                             'href' => 'https://facebook.com'
                         ],
                         [
-                            'icon' => asset('icon/instagram-primary.svg'),
+                            'icon' => \Helpers\Url::asset('icon/instagram-primary.svg'),
                             'title' => 'Instagram',
                             'href' => 'https://instagram.com'
                         ]
@@ -66,7 +66,7 @@
 
                         ?>
                         <a href="<?= $social->href ?>" title="<?= $social->title ?>">
-                            <?php render_component('icon', [
+                            <?php \Helpers\Template::render_component('icon', [
                                 'icon' => $social->icon
                             ]) ?>
                         </a>
@@ -79,7 +79,7 @@
 
         <!-- copyright -->
         <div class="text-sm py-4 cursor-default text-center">
-            <a class="text-primary-1" href="<?= url() ?>" title="<?= CONF_NAME ?>">
+            <a class="text-primary-1" href="<?= \Helpers\Url::url() ?>" title="<?= CONF_NAME ?>">
                 <?= CONF_NAME ?>
             </a> ©
             <?= date('Y') ?> - Todos os direitos reservados
@@ -87,7 +87,7 @@
     </div>
 </footer>
 
-<script type="module" src="<?= asset('dist/main.bundle.js') ?>"></script>
+<script type="module" src="<?= \Helpers\Url::asset('dist/main.bundle.js') ?>"></script>
 </body>
 
 </html>

@@ -16,15 +16,17 @@ require __DIR__ . '/../bootstrap.php';
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 
-    <title><?= CONF_NAME ?></title>
+    <title>
+        <?= CONF_NAME ?>
+    </title>
 </head>
 
 <body>
 
     <header id="jsHeader" class="w-full min-h-[100px] bg-basi-11 py-2 border-b-2 border-primary-4 flex items-center">
         <div class="container flex">
-            <a href="<?= url() ?>" title="<?= CONF_NAME ?> Página Inicial">
-                <img src="<?= asset('img/logo.svg') ?>" alt="<?= CONF_NAME ?> Logo">
+            <a href="<?= \Helpers\Url::url() ?>" title="<?= CONF_NAME ?> Página Inicial">
+                <img src="<?= \Helpers\Url::asset('img/logo.svg') ?>" alt="<?= CONF_NAME ?> Logo">
             </a>
 
             <div class="w-full flex items-center">
@@ -35,7 +37,7 @@ require __DIR__ . '/../bootstrap.php';
                     $navigations = [
                         [
                             'text' => 'Início',
-                            'href' => url(),
+                            'href' => \Helpers\Url::url(),
                             'title' => 'Início'
                         ],
                         [
@@ -65,18 +67,18 @@ require __DIR__ . '/../bootstrap.php';
 
                 <!-- button -->
                 <?php
-                render_component('button', [
+                \Helpers\Template::render_component('button', [
                     'style' => 'ml-auto xl:ml-10',
                     'size' => 'base',
                     'text' => 'Eu quero internet',
                     'href' => 'https://api.whatsapp.com/send?phone=' . CONF_WHATSAPP_NUMBER,
-                    'prependIcon' => asset('icon/whatsapp-white.svg'),
+                    'prependIcon' => \Helpers\Url::asset('icon/whatsapp-white.svg'),
                     'target' => '_blank'
                 ]);
                 ?>
 
                 <button class="xl:hidden text-basi-4 pl-4" id="jsNavigationToggler">
-                    <?php render_component('icon', [
+                    <?php \Helpers\Template::render_component('icon', [
                         'style' => 'pointer-events-none',
                         'icon' => 'menu'
                     ]) ?>

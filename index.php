@@ -3,7 +3,7 @@
 $page = 'home';
 if ($p = $_GET['page'] ?? null) {
     if (!file_exists(__DIR__ . '/src/pages/' . $p . '.php')) {
-        header('Location: ' . url());
+        header('Location: ' . \Helpers\Url::url());
         exit;
     }
 

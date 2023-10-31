@@ -72,7 +72,7 @@ $class = [
     <?php
 
     if ($prependIcon) {
-        render_component('icon', [
+        \Helpers\Template::render_component('icon', [
             'icon' => $prependIcon,
             'style' => 'pointer-events-none'
         ]);
@@ -81,7 +81,7 @@ $class = [
     echo $text;
 
     if ($appendIcon) {
-        render_component('icon', [
+        \Helpers\Template::render_component('icon', [
             'icon' => $appendIcon,
             'style' => 'pointer-events-none'
         ]);
