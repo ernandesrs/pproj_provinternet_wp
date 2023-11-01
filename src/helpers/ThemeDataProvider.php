@@ -4,6 +4,41 @@ namespace Helpers;
 
 class ThemeDataProvider
 {
+    private static $pages = [
+        'home' => \Helpers\HomeDataProvider::class,
+        'terms' => \Helpers\PrivacyTermsDataProvider::class
+    ];
+
+    /**
+     * Seo
+     *
+     * @param string $page
+     * @return \CoffeeCode\Optimizer\Optimizer
+     */
+    static function seo(string $page = 'home')
+    {
+        $seoMeta = [
+            'title' => \Helpers\ThemeDataProvider::siteName(),
+            'description' => '',
+            'url' => '',
+            'cover' => '',
+            'index' => true
+        ];
+
+        if (key_exists($page, static::$pages)) {
+            $seoMeta = static::$pages[$page]::seo();
+        }
+
+        return (new \CoffeeCode\Optimizer\Optimizer())
+            ->optimize(
+                \Helpers\ThemeDataProvider::siteName() . ' - ' . $seoMeta['title'],
+                $seoMeta['description'],
+                $seoMeta['url'],
+                $seoMeta['cover'],
+                $seoMeta['index']
+            );
+    }
+
     /**
      * Get the site name
      *
@@ -21,7 +56,7 @@ class ThemeDataProvider
      */
     static function headerLogo()
     {
-        return \Helpers\Url::asset('img/logo.svg');
+        return \Helpers\Url::asset('img/header-logo.svg');
     }
 
     /**
@@ -31,7 +66,7 @@ class ThemeDataProvider
      */
     static function footerLogo()
     {
-        return \Helpers\Url::asset('img/logo-light.svg');
+        return \Helpers\Url::asset('img/footer-logo.svg');
     }
 
     /**

@@ -10,9 +10,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 
-    <title>
-        <?= \Helpers\ThemeDataProvider::siteName() ?>
-    </title>
+    <?= \Helpers\ThemeDataProvider::seo($page)->render() ?>
+
 </head>
 
 <body>

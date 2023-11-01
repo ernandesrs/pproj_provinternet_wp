@@ -5,6 +5,22 @@ namespace Helpers;
 class HomeDataProvider
 {
     /**
+     * Home page seo
+     *
+     * @return array
+     */
+    static function seo()
+    {
+        return [
+            'title' => 'Velocidade, baixa latência e baixo preço',
+            'description' => 'Internet via fibra ótica em Lorem City',
+            'url' => \Helpers\Url::url(),
+            'cover' => '',
+            'index' => true
+        ];
+    }
+
+    /**
      * Get data to banner section
      *
      * @return array
