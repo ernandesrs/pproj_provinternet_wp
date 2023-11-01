@@ -214,7 +214,27 @@ class HomeDataProvider
      */
     static function sectionTestmonials()
     {
-        return [
+        $sectionTestmonials = [
+            'title' => cfs()->get('titulo_da_secao', get_the_ID()),
+            'subtitle' => cfs()->get('subtitulo_da_secao', get_the_ID()),
+            'testmonials' => []
+        ];
+
+        $testmonials = cfs()->get('lista_de_depoimentos', get_the_ID());
+        if (!is_array($testmonials)) {
+            $testmonials = [];
+        }
+
+        $sectionTestmonials['testmonials'] = array_map(function ($t) {
+            return [
+                'client_name' => $t['nome_do_cliente'],
+                'title' => $t['destaque_do_depoimento'],
+                'testmonial' => $t['detalhes_do_depoimento'],
+                'avatar' => $t['foto_do_cliente']
+            ];
+        }, $testmonials);
+
+        return isset($sectionTestmonials['title']) && !empty($sectionTestmonials['title']) ? $sectionTestmonials : [
             'title' => 'Clientes',
             'subtitle' => 'Vejam o que alguns de nossos clientes dizem',
             'testmonials' => [
