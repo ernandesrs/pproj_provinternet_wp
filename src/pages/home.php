@@ -248,6 +248,16 @@ $features = \Helpers\Template::sectionFeatures() ?? [];
 </div>
 <!-- /clients -->
 
+<?php
+
+$contacts = array_merge(\Helpers\Template::contacts());
+
+[
+    'map_location' => $mapLocation,
+    'address' => $address
+] = \Helpers\Template::address();
+
+?>
 <!-- location/contact -->
 <div id="contact" class="min-h-[100vh] flex justify-center items-center py-16 lg:py-9 relative bg-basi-10 text-basi-4">
     <div class="circle-decoration circle-on-right"></div>
@@ -256,9 +266,8 @@ $features = \Helpers\Template::sectionFeatures() ?? [];
         <div class="basis-full lg:basis-6/12 flex flex-col items-center lg:items-start mb-12">
             <h2 class="text-2xl lg:text-3xl text-primary-4 font-semibold mb-8">Nossa localização</h2>
             <iframe class="rounded-3xl mb-8 w-full max-w-[600px] h-[350px] shadow-sm border"
-                src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1907.9331951384584!2d-54.81767306054084!3d-22.178121299502063!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1spt-BR!2sbr!4v1698008075553!5m2!1spt-BR!2sbr"
-                style="border:0;" allowfullscreen="" loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"></iframe>
+                src="https://www.google.com/maps/embed?pb=<?= $mapLocation ?>" style="border:0;" allowfullscreen=""
+                loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             <div class="cursor-default">
                 <div class="flex">
                     <?php \Helpers\Template::renderComponent('icon', [
@@ -267,8 +276,14 @@ $features = \Helpers\Template::sectionFeatures() ?? [];
                     ]); ?>
 
                     <div class="ml-3">
-                        <div class="text-base font-medium">Rua Lorem Ipsum, 246</div>
-                        <div class="text-sm">Lorem City, LS</div>
+                        <div class="text-base font-medium">
+                            <?= $address['street'] ?>,
+                            <?= $address['street_number'] ?>
+                        </div>
+                        <div class="text-sm">
+                            <?= $address['city'] ?>,
+                            <?= $address['state'] ?>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -279,45 +294,6 @@ $features = \Helpers\Template::sectionFeatures() ?? [];
                 <h2 class="text-2xl lg:text-3xl font-semibold mb-8 text-basi-4">Contate-nos</h2>
                 <div class="ml-5">
                     <?php
-
-                    $contacts = [
-                        [
-                            'text' => '@netfacil',
-                            'href' => 'https://facebook.com/',
-                            'title' => '@netfacil no Facebook',
-                            'icon' => \Helpers\Url::asset('icon/facebook-gray.svg'),
-                            'target' => '_blank'
-                        ],
-                        [
-                            'text' => '@netfacil',
-                            'href' => 'https://instagram.com/',
-                            'title' => '@netfacil no Instagram',
-                            'icon' => \Helpers\Url::asset('icon/instagram-gray.svg'),
-                            'target' => '_blank'
-                        ],
-                        [
-                            'text' => '+55 00 0 0000-0000',
-                            'href' => 'https://api.whatsapp.com/tel=',
-                            'title' => '@netfacil no Whatsapp',
-                            'icon' => \Helpers\Url::asset('icon/whatsapp-gray.svg'),
-                            'target' => '_blank'
-                        ],
-                        [
-                            'text' => 'lorem@ipsum.com',
-                            'href' => 'mailto:lorem@ipsum.com',
-                            'title' => '@netfacil via email',
-                            'icon' => \Helpers\Url::asset('icon/envelope-gray.svg'),
-                            'target' => '_blank'
-                        ],
-                        [
-                            'text' => '00 0 0000-0000',
-                            'href' => 'tel:00 0 0000-0000',
-                            'title' => 'Ligue para nós',
-                            'icon' => \Helpers\Url::asset('icon/telephone-gray.svg'),
-                            'target' => '_blank'
-                        ]
-                    ];
-
                     foreach ($contacts as $contact):
                         $contact = (object) $contact;
                         ?>
