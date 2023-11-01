@@ -1,3 +1,5 @@
+</div>
+
 <footer class="min-h-[365px] flex items-center text-basi-4 border-t border-basi-8">
     <div class="container">
         <div class="flex flex-wrap justify-center py-20">
@@ -100,6 +102,9 @@
 <!-- cookie alert -->
 
 <script type="module" src="<?= \Helpers\Url::asset('dist/main.bundle.js') ?>"></script>
+
+<?php wp_footer(); ?>
+
 </body>
 
 </html>

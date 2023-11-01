@@ -220,4 +220,14 @@ class ThemeDataProvider
             ]
         ];
     }
+
+    /**
+     * Get defined whatsapp numbers
+     *
+     * @return array
+     */
+    static function whatsappNumbers()
+    {
+        return CONF_WHATSAPP_NUMBERS;
+    }
 }

@@ -12,7 +12,7 @@ class Url
      */
     static function url(?string $path = null)
     {
-        return CONF_URL . ($path ? (str_starts_with($path, '/') ? $path : '/' . $path) : '');
+        return home_url() . ($path ? (str_starts_with($path, '/') ? $path : '/' . $path) : '');
     }
 
     /**
@@ -24,7 +24,7 @@ class Url
      */
     static function whatsappUrl(string $message, string $channel = 'subscription')
     {
-        $number = CONF_WHATSAPP_NUMBERS[$channel] ?? 'subscription';
+        $number = \Helpers\ThemeDataProvider::whatsappNumbers()[$channel] ?? 'subscription';
 
         return 'https://api.whatsapp.com/send?phone=' . $number . '&text=' . $message;
     }
@@ -47,7 +47,7 @@ class Url
      */
     static function asset(string $resource)
     {
-        return static::url() . '/assets' . (str_starts_with($resource, '/') ? $resource : '/' . $resource);
+        return get_stylesheet_directory_uri() . '/assets' . (str_starts_with($resource, '/') ? $resource : '/' . $resource);
     }
 }
 
