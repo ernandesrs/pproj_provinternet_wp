@@ -45,23 +45,26 @@
             </div>
 
             <div class="basis-full md:basis-5/12 flex items-start md:order-first">
-                <img src="<?= \Helpers\ThemeDataProvider::footerLogo() ?>"
-                    alt="<?= \Helpers\ThemeDataProvider::siteName() ?> FOOTER LOGO">
-                <div class="flex p-6 gap-4">
-                    <?php
-
-                    foreach (\Helpers\ThemeDataProvider::socials() as $social):
-                        $social = (object) $social;
-
-                        ?>
-                        <a href="<?= $social->href ?>" title="<?= $social->title ?>">
-                            <?php \Helpers\Template::renderComponent('icon', [
-                                'icon' => $social->icon
-                            ]) ?>
-                        </a>
+                <div class="flex">
+                    <img src="<?= \Helpers\ThemeDataProvider::footerLogo() ?>"
+                        alt="<?= \Helpers\ThemeDataProvider::siteName() ?> FOOTER LOGO">
+                    <div class="flex p-6 gap-4">
                         <?php
-                    endforeach;
-                    ?>
+
+                        foreach (\Helpers\ThemeDataProvider::socials() as $social):
+                            $social = (object) $social;
+
+                            ?>
+                            <a href="<?= $social->href ?>" title="<?= $social->title ?>"
+                                target="<?= $social->target ?? '_self' ?>">
+                                <?php \Helpers\Template::renderComponent('icon', [
+                                    'icon' => $social->icon
+                                ]) ?>
+                            </a>
+                            <?php
+                        endforeach;
+                        ?>
+                    </div>
                 </div>
             </div>
         </div>
