@@ -11,7 +11,7 @@ $featuresPositions = [
     'features' => $bannerFeatureData,
     'headline' => $bannerHeadline,
     'subheadline' => $bannerSubheadline
-] = \Helpers\Template::sectionBanner() ?? [];
+] = \Helpers\HomeDataProvider::sectionBanner() ?? [];
 
 ?>
 <div class="container min-h-[85vh] flex items-center py-16 lg:py-9">
@@ -73,7 +73,7 @@ $featuresPositions = [
 <!-- features -->
 <?php
 
-$features = \Helpers\Template::sectionFeatures() ?? [];
+$features = \Helpers\HomeDataProvider::sectionFeatures() ?? [];
 
 ?>
 <div class="bg-primary-4 py-16 lg:py-9 flex items-center" data-aos="fade-up">
@@ -115,7 +115,7 @@ $features = \Helpers\Template::sectionFeatures() ?? [];
     'plans' => $plans,
     'title' => $plansSectionTitle,
     'subtitle' => $plansSectionSubtitle
-] = \Helpers\Template::sectionPlans() ?? [];
+] = \Helpers\HomeDataProvider::sectionPlans() ?? [];
 
 ?>
 <div id="plans" class="container min-h-[100vh] flex flex-col justify-center py-16 lg:py-9">
@@ -185,7 +185,7 @@ $features = \Helpers\Template::sectionFeatures() ?? [];
     'testmonials' => $testmonials,
     'title' => $testmonialsSectionTitle,
     'subtitle' => $testmonialsSectionSubtitle
-] = \Helpers\Template::sectionTestmonials() ?? [];
+] = \Helpers\HomeDataProvider::sectionTestmonials() ?? [];
 
 ?>
 <div id="testmonials" class="container min-h-[100vh] flex flex-col justify-center py-16 lg:py-9 relative">
@@ -250,12 +250,11 @@ $features = \Helpers\Template::sectionFeatures() ?? [];
 
 <?php
 
-$contacts = array_merge(\Helpers\Template::contacts());
-
 [
     'map_location' => $mapLocation,
-    'address' => $address
-] = \Helpers\Template::address();
+    'address' => $address,
+    'contacts' => $contacts
+] = \Helpers\HomeDataProvider::sectionLocationAndContact();
 
 ?>
 <!-- location/contact -->

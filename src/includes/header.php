@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 
     <title>
-        <?= \Helpers\Template::siteName() ?>
+        <?= \Helpers\ThemeDataProvider::siteName() ?>
     </title>
 </head>
 
@@ -19,8 +19,9 @@
 
     <header id="jsHeader" class="w-full min-h-[100px] bg-basi-11 py-2 border-b-2 border-primary-4 flex items-center">
         <div class="container flex">
-            <a href="<?= \Helpers\Url::url() ?>" title="<?= \Helpers\Template::siteName() ?> Página Inicial">
-                <img src="<?= \Helpers\Url::asset('img/logo.svg') ?>" alt="<?= \Helpers\Template::siteName() ?> Logo">
+            <a href="<?= \Helpers\Url::url() ?>" title="<?= \Helpers\ThemeDataProvider::siteName() ?> Página Inicial">
+                <img src="<?= \Helpers\Url::asset('img/logo.svg') ?>"
+                    alt="<?= \Helpers\ThemeDataProvider::siteName() ?> Logo">
             </a>
 
             <div class="w-full flex items-center">
@@ -28,7 +29,7 @@
                     id="jsNavigation">
                     <?php
 
-                    foreach (\Helpers\Template::headerNav() as $nav):
+                    foreach (\Helpers\ThemeDataProvider::headerNav() as $nav):
                         $nav = (object) $nav;
                         ?>
                         <a class="px-6 py-3 hover:pl-7 xl:hover:pl-6 hover:text-primary-4 duration-300"
