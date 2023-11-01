@@ -47,10 +47,10 @@
             </div>
 
             <div class="basis-full md:basis-5/12 flex items-start md:order-first">
-                <div class="flex">
+                <div class="flex items-center">
                     <img src="<?= \Helpers\ThemeDataProvider::footerLogo() ?>"
                         alt="<?= \Helpers\ThemeDataProvider::siteName() ?> FOOTER LOGO">
-                    <div class="flex p-6 gap-4">
+                    <div class="flex px-6 gap-4">
                         <?php
 
                         foreach (\Helpers\ThemeDataProvider::socials() as $social):

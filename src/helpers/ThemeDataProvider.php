@@ -46,7 +46,7 @@ class ThemeDataProvider
      */
     static function siteName()
     {
-        return CONF_NAME;
+        return get_bloginfo('name');
     }
 
     /**
@@ -56,7 +56,9 @@ class ThemeDataProvider
      */
     static function headerLogo()
     {
-        return \Helpers\Url::asset('img/header-logo.svg');
+        $customLogo = wp_get_attachment_image_src(get_theme_mod('custom_logo', null), 'full');
+
+        return $customLogo ? current($customLogo) : \Helpers\Url::asset('img/header-logo.svg');
     }
 
     /**
@@ -66,7 +68,7 @@ class ThemeDataProvider
      */
     static function footerLogo()
     {
-        return \Helpers\Url::asset('img/footer-logo.svg');
+        return self::headerLogo();
     }
 
     /**
