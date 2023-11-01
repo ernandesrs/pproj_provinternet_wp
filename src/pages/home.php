@@ -143,8 +143,8 @@ $features = \Helpers\HomeDataProvider::sectionFeatures() ?? [];
                 data-aos="<?= $key == 0 ? 'fade-right' : ($key == count($plans) - 1 ? 'fade-left' : 'fade-up') ?>"
                 data-aos-duration="<?= 300 + (100 * (1 + $key)) ?>" data-aos-delay="<?= 200 + (100 * (1 + $key)) ?>">
 
-                <div class="shadow-xl p-4 rounded-[100px]">
-                    <div class="shadow-lg px-4 py-6 rounded-[100px] text-center text-basi-4 font-semibold">
+                <div class="<?= $plan->highlight ? 'shadow-2xl' : 'shadow' ?> p-4 rounded-[75px]">
+                    <div class="shadow-lg px-4 py-6 rounded-[75px] text-center text-basi-4 font-semibold">
                         <span class="block text-6xl">
                             <?= $titleA ?>
                         </span>
@@ -152,7 +152,7 @@ $features = \Helpers\HomeDataProvider::sectionFeatures() ?? [];
                             <?= $titleB ?>
                         </span>
                     </div>
-                    <div class="px-4 py-5">
+                    <div class="px-4 pt-5">
                         <ul class="font-semibold text-base text-basi-3 text-center">
                             <?php foreach ($plan->features as $feature): ?>
                                 <li class="py-1">
@@ -160,6 +160,15 @@ $features = \Helpers\HomeDataProvider::sectionFeatures() ?? [];
                                 </li>
                             <?php endforeach; ?>
                         </ul>
+                    </div>
+                    <div class="px-4 py-5 text-center flex flex-col justify-center text-basi-5">
+                        <span class="text-3xl md:text-4xl font-semibold md:font-bold">
+                            R$
+                            <?= $plan->price ?>
+                        </span>
+                        <span>
+                            <?= ['monthly' => 'por mês', 'yearly' => 'por ano'][$plan->recurrence_period] ?>
+                        </span>
                     </div>
                     <div class="text-center translate-y-5">
                         <?php \Helpers\Template::renderComponent('button', [

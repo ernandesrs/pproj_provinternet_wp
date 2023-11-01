@@ -64,6 +64,13 @@ class HomeDataProvider
      */
     static function sectionPlans()
     {
+        /**
+         * 
+         * Allowed values to recurrence_period field:
+         * monthly, yearly
+         * 
+         */
+
         return [
             'title' => 'Planos',
             'subtitle' => 'Confira todos os nossos planos',
@@ -75,7 +82,10 @@ class HomeDataProvider
                         'Upload: 6,25 MB/s',
                         'Instalação grátis',
                         'Roteador grátis*',
-                    ]
+                    ],
+                    'price' => 50,
+                    'recurrence_period' => 'monthly',
+                    'highlight' => false
                 ],
                 [
                     'title' => '75 MEGAS',
@@ -84,7 +94,10 @@ class HomeDataProvider
                         'Upload: 12,25 MB/s',
                         'Instalação grátis',
                         'Roteador grátis*',
-                    ]
+                    ],
+                    'price' => 70,
+                    'recurrence_period' => 'monthly',
+                    'highlight' => true
                 ],
                 [
                     'title' => '125 MEGAS',
@@ -93,7 +106,10 @@ class HomeDataProvider
                         'Upload: 16,25 MB/s',
                         'Instalação grátis',
                         'Roteador grátis*',
-                    ]
+                    ],
+                    'price' => 100,
+                    'recurrence_period' => 'monthly',
+                    'highlight' => false
                 ]
             ]
         ];
