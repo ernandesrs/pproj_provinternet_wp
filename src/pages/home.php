@@ -71,27 +71,15 @@ $featuresPositions = [
 <!-- /banner -->
 
 <!-- features -->
+<?php
+
+$features = \Helpers\Template::sectionFeatures() ?? [];
+
+?>
 <div class="bg-primary-4 py-16 lg:py-9 flex items-center" data-aos="fade-up">
     <div class="container flex flex-wrap justify-center">
         <?php
 
-        $features = [
-            [
-                'icon' => 'apps',
-                'title' => 'Consetur adipicing',
-                'description' => 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit, veniam.',
-            ],
-            [
-                'icon' => 'wifi',
-                'title' => 'Consetur adipicing',
-                'description' => 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit, veniam.',
-            ],
-            [
-                'icon' => 'support_agent',
-                'title' => 'Consetur adipising',
-                'description' => 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit, veniam.',
-            ]
-        ];
         foreach ($features as $key => $feature):
             $feature = (object) $feature;
             ?>
@@ -121,50 +109,30 @@ $featuresPositions = [
 <!-- /features -->
 
 <!-- plans -->
+<?php
+
+[
+    'plans' => $plans,
+    'title' => $plansSectionTitle,
+    'subtitle' => $plansSectionSubtitle
+] = \Helpers\Template::sectionPlans() ?? [];
+
+?>
 <div id="plans" class="container min-h-[100vh] flex flex-col justify-center py-16 lg:py-9">
     <div class="w-full flex flex-wrap justify-center">
         <div class="basis-10/12 sm:basis-8/12 md:basis-6/12 lg:basis-5/12 font-bold text-center py-10">
-            <h1 class="text-basi-5 text-2xl lg:text-3xl mb-3" data-aos="fade-up">Planos</h1>
+            <h1 class="text-basi-5 text-2xl lg:text-3xl mb-3" data-aos="fade-up">
+                <?= $plansSectionTitle ?>
+            </h1>
             <h2 class="text-basi-2 text-4xl lg:text-5xl" data-aos="fade-up" data-aos-delay="250"
-                style="line-height:120%;">Confira todos os nossos planos</h2>
+                style="line-height:120%;">
+                <?= $plansSectionSubtitle ?>
+            </h2>
         </div>
     </div>
 
     <div class="w-full flex flex-wrap justify-center">
         <?php
-
-        $plans = [
-            [
-                'title' => '50 MEGAS',
-                'features' => [
-                    'Download: 6,25 MB/s',
-                    'Upload: 6,25 MB/s',
-                    'Instalação grátis',
-                    'Roteador grátis*',
-                ],
-                'url' => '#'
-            ],
-            [
-                'title' => '75 MEGAS',
-                'features' => [
-                    'Download: 12,25 MB/s',
-                    'Upload: 12,25 MB/s',
-                    'Instalação grátis',
-                    'Roteador grátis*',
-                ],
-                'url' => '#'
-            ],
-            [
-                'title' => '125 MEGAS',
-                'features' => [
-                    'Download: 16,25 MB/s',
-                    'Upload: 16,25 MB/s',
-                    'Instalação grátis',
-                    'Roteador grátis*',
-                ],
-                'url' => '#'
-            ]
-        ];
 
         foreach ($plans as $key => $plan):
             $plan = (object) $plan;
@@ -195,8 +163,9 @@ $featuresPositions = [
                     </div>
                     <div class="text-center translate-y-5">
                         <?php \Helpers\Template::renderComponent('button', [
-                            'text' => 'Eu quer este',
-                            'href' => $plan->url
+                            'text' => 'Eu quero este',
+                            'target' => '_blank',
+                            'href' => \Helpers\Url::whatsappUrl('Olá, estou interessado(a) no plano ' . $titleA . ' ' . $titleB, 'subscription'),
                         ]) ?>
                     </div>
                 </div>
@@ -210,17 +179,26 @@ $featuresPositions = [
 <!-- /plans -->
 
 <!-- clients -->
+<?php
+
+[
+    'testmonials' => $testmonials,
+    'title' => $testmonialsSectionTitle,
+    'subtitle' => $testmonialsSectionSubtitle
+] = \Helpers\Template::sectionTestmonials() ?? [];
+
+?>
 <div id="testmonials" class="container min-h-[100vh] flex flex-col justify-center py-16 lg:py-9 relative">
     <div class="circle-decoration circle-on-left"></div>
 
     <div class="flex flex-wrap justify-center">
         <div class="sm:basis-8/12 lg:basis-5/12 font-bold text-center lg:text-left mb-10 lg:mb-0">
             <h1 class="text-basi-5 text-2xl lg:text-3xl mb-3" data-aos="zoom-in-right">
-                Clientes
+                <?= $testmonialsSectionTitle ?>
             </h1>
             <h2 class="text-basi-2 text-4xl lg:text-5xl" style="line-height:120%;" data-aos="zoom-in-right"
                 data-aos-delay="275">
-                O que dizem alguns de nossos clientes
+                <?= $testmonialsSectionSubtitle ?>
             </h2>
             <div class="mt-10">
                 <?php \Helpers\Template::renderComponent('button', [
@@ -234,33 +212,6 @@ $featuresPositions = [
 
         <div class="lg:basis-7/12 px-2 flex flex-wrap">
             <?php
-
-            $testmonials = [
-                [
-                    'client_name' => 'Client Name',
-                    'title' => 'Lorem ipsum dolor',
-                    'testmonial' => 'Lorem ipsum dolor, natus dolor sitin datus. Only nutis uistu loken nadis ilastu unranin ila nanad uiqui.',
-                    'avatar' => \Helpers\Url::asset('img/client-thumb.png')
-                ],
-                [
-                    'client_name' => 'Client Name',
-                    'title' => 'Lorem ipsum dolor',
-                    'testmonial' => 'Lorem ipsum dolor, natus dolor sitin datus. Only nutis uistu loken nadis ilastu unranin ila nanad uiqui.',
-                    'avatar' => \Helpers\Url::asset('img/client-thumb.png')
-                ],
-                [
-                    'client_name' => 'Client Name',
-                    'title' => 'Lorem ipsum dolor',
-                    'testmonial' => 'Lorem ipsum dolor, natus dolor sitin datus. Only nutis uistu loken nadis ilastu unranin ila nanad uiqui.',
-                    'avatar' => \Helpers\Url::asset('img/client-thumb.png')
-                ],
-                [
-                    'client_name' => 'Client Name',
-                    'title' => 'Lorem ipsum dolor',
-                    'testmonial' => 'Lorem ipsum dolor, natus dolor sitin datus. Only nutis uistu loken nadis ilastu unranin ila nanad uiqui.',
-                    'avatar' => \Helpers\Url::asset('img/client-thumb.png')
-                ]
-            ];
 
             foreach ($testmonials as $test):
                 $test = (object) $test;
