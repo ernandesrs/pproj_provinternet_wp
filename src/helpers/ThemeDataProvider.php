@@ -15,6 +15,26 @@ class ThemeDataProvider
     }
 
     /**
+     * Get header logo url
+     *
+     * @return string
+     */
+    static function headerLogo()
+    {
+        return \Helpers\Url::asset('img/logo.svg');
+    }
+
+    /**
+     * Get footer logo url
+     *
+     * @return string
+     */
+    static function footerLogo()
+    {
+        return \Helpers\Url::asset('img/logo-light.svg');
+    }
+
+    /**
      * Return the header nav
      *
      * @return array

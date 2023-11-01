@@ -45,7 +45,7 @@
             </div>
 
             <div class="basis-full md:basis-5/12 flex items-start md:order-first">
-                <img src="<?= \Helpers\Url::asset('img/logo-light.svg') ?>"
+                <img src="<?= \Helpers\ThemeDataProvider::footerLogo() ?>"
                     alt="<?= \Helpers\ThemeDataProvider::siteName() ?> FOOTER LOGO">
                 <div class="flex p-6 gap-4">
                     <?php
@@ -68,7 +68,8 @@
 
         <!-- copyright -->
         <div class="text-sm py-4 cursor-default text-center">
-            <a class="text-primary-1" href="<?= \Helpers\Url::url() ?>" title="<?= \Helpers\ThemeDataProvider::siteName() ?>">
+            <a class="text-primary-1" href="<?= \Helpers\Url::url() ?>"
+                title="<?= \Helpers\ThemeDataProvider::siteName() ?>">
                 <?= \Helpers\ThemeDataProvider::siteName() ?>
             </a> ©
             <?= date('Y') ?> - Todos os direitos reservados

@@ -20,7 +20,7 @@
     <header id="jsHeader" class="w-full min-h-[100px] bg-basi-11 py-2 border-b-2 border-primary-4 flex items-center">
         <div class="container flex">
             <a href="<?= \Helpers\Url::url() ?>" title="<?= \Helpers\ThemeDataProvider::siteName() ?> Página Inicial">
-                <img src="<?= \Helpers\Url::asset('img/logo.svg') ?>"
+                <img src="<?= \Helpers\ThemeDataProvider::headerLogo() ?>"
                     alt="<?= \Helpers\ThemeDataProvider::siteName() ?> Logo">
             </a>
 
