@@ -78,7 +78,19 @@ class ThemeDataProvider
      */
     static function headerNav()
     {
-        return [
+        $headerNav = wp_get_nav_menu_items('header-menu');
+
+        if ($headerNav) {
+            $headerNav = array_map(function ($hn) {
+                return [
+                    'text' => $hn->title,
+                    'href' => $hn->url,
+                    'title' => 'Ir para ' . $hn->title
+                ];
+            }, $headerNav);
+        }
+
+        return $headerNav ? $headerNav : [
             [
                 'text' => 'Início',
                 'href' => \Helpers\Url::url(),
@@ -104,7 +116,19 @@ class ThemeDataProvider
      */
     static function footerNav()
     {
-        return static::headerNav();
+        $footerNav = wp_get_nav_menu_items('footer-menu');
+
+        if ($footerNav) {
+            $footerNav = array_map(function ($hn) {
+                return [
+                    'text' => $hn->title,
+                    'href' => $hn->url,
+                    'title' => 'Ir para ' . $hn->title
+                ];
+            }, $footerNav);
+        }
+
+        return $footerNav ? $footerNav : static::headerNav();
     }
 
     /**
@@ -114,7 +138,19 @@ class ThemeDataProvider
      */
     static function footerLinks()
     {
-        return [
+        $footerLinks = wp_get_nav_menu_items('footer-links');
+
+        if ($footerLinks) {
+            $footerLinks = array_map(function ($hn) {
+                return [
+                    'text' => $hn->title,
+                    'href' => $hn->url,
+                    'title' => 'Ir para ' . $hn->title
+                ];
+            }, $footerLinks);
+        }
+
+        return $footerLinks ? $footerLinks : [
             [
                 'text' => 'Termos de privacidade',
                 'href' => \Helpers\Url::urlPrivacyTermsPage(),
