@@ -71,7 +71,20 @@ class HomeDataProvider
      */
     static function sectionFeatures()
     {
-        return [
+        $features = cfs()->get('destaques', get_the_ID());
+        if (!is_array($features)) {
+            $features = [];
+        }
+
+        $features = array_map(function ($f) {
+            return [
+                'icon' => $f['icone_do_destaque'],
+                'title' => $f['titulo_do_destaque'],
+                'description' => $f['descricao_do_destaque']
+            ];
+        }, $features);
+
+        return count($features) > 0 ? $features : [
             [
                 'icon' => 'apps',
                 'title' => 'Consetur adipicing',
