@@ -8,7 +8,8 @@
                     </h3>
                     <nav class="flex flex-col text-primary-1 ml-2">
                         <?php
-                        foreach ($navigations as $nav):
+
+                        foreach (\Helpers\Template::footerNav() as $nav):
                             $nav = (object) $nav;
                             ?>
                             <a class="py-2 hover:pl-1 duration-200 hover:text-basi-6" href="<?= $nav->href ?>"
@@ -29,7 +30,7 @@
                     </h3>
                     <nav class="flex flex-col text-primary-1 ml-2">
                         <?php
-                        foreach ([['text' => 'Termos de privacidade', 'href' => \Helpers\Url::urlPrivacyTermsPage()], ['text' => 'Termos de serviço', 'href' => '#']] as $nav):
+                        foreach (\Helpers\Template::footerLinks() as $nav):
                             $nav = (object) $nav;
                             ?>
                             <a class="py-2 hover:pl-1 duration-200 hover:text-basi-6" href="<?= $nav->href ?>"
@@ -44,24 +45,12 @@
             </div>
 
             <div class="basis-full md:basis-5/12 flex items-start md:order-first">
-                <img src="<?= \Helpers\Url::asset('img/logo-light.svg') ?>" alt="<?= CONF_NAME ?> FOOTER LOGO">
+                <img src="<?= \Helpers\Url::asset('img/logo-light.svg') ?>"
+                    alt="<?= \Helpers\Template::siteName() ?> FOOTER LOGO">
                 <div class="flex p-6 gap-4">
                     <?php
 
-                    $socials = [
-                        [
-                            'icon' => \Helpers\Url::asset('icon/facebook-primary.svg'),
-                            'title' => 'Facebook',
-                            'href' => 'https://facebook.com'
-                        ],
-                        [
-                            'icon' => \Helpers\Url::asset('icon/instagram-primary.svg'),
-                            'title' => 'Instagram',
-                            'href' => 'https://instagram.com'
-                        ]
-                    ];
-
-                    foreach ($socials as $social):
+                    foreach (\Helpers\Template::socials() as $social):
                         $social = (object) $social;
 
                         ?>
@@ -79,8 +68,8 @@
 
         <!-- copyright -->
         <div class="text-sm py-4 cursor-default text-center">
-            <a class="text-primary-1" href="<?= \Helpers\Url::url() ?>" title="<?= CONF_NAME ?>">
-                <?= CONF_NAME ?>
+            <a class="text-primary-1" href="<?= \Helpers\Url::url() ?>" title="<?= \Helpers\Template::siteName() ?>">
+                <?= \Helpers\Template::siteName() ?>
             </a> ©
             <?= date('Y') ?> - Todos os direitos reservados
         </div>

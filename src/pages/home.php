@@ -1,42 +1,49 @@
 <!-- banner -->
+<?php
+
+$featuresPositions = [
+    '-top-8',
+    '-left-20',
+    '-right-20'
+];
+
+[
+    'features' => $bannerFeatureData,
+    'headline' => $bannerHeadline,
+    'subheadline' => $bannerSubheadline
+] = \Helpers\Template::sectionBanner() ?? [];
+
+?>
 <div class="container min-h-[85vh] flex items-center py-16 lg:py-9">
     <div class="flex flex-wrap justify-center">
         <div class="basis-full lg:basis-6/12 p-6 flex items-center justify-center mb-8 lg:mb-0 lg:order-12">
             <div class="banner-ilustration">
+                <?php
 
-                <div class="hightlight -top-8">
-                    <?php \Helpers\Template::renderComponent('icon', [
-                        'icon' => 'router',
-                        'style' => 'icon'
-                    ]) ?><span>Roteador Dual Band</span>
-                </div>
+                foreach (array_slice($bannerFeatureData, 0, 3) as $key => $bfd) {
+                    ?>
+                    <div class="hightlight <?= $featuresPositions[$key] ?>">
+                        <?php \Helpers\Template::renderComponent('icon', [
+                            'icon' => $bfd['icon'],
+                            'style' => 'icon'
+                        ]) ?><span>
+                            <?= $bfd['text'] ?>
+                        </span>
+                    </div>
+                    <?php
+                }
 
-                <div class="hightlight -left-20">
-                    <?php \Helpers\Template::renderComponent('icon', [
-                        'icon' => 'speed',
-                        'style' => 'icon'
-                    ]) ?><span>Alta Velocidade e Baixa Latência</span>
-                </div>
-
-                <div class="hightlight bottom-2 -right-20">
-                    <?php \Helpers\Template::renderComponent('icon', [
-                        'icon' => 'wifi_tethering',
-                        'style' => 'icon'
-                    ]) ?><span>Via Fibra Ou Rádio</span>
-                </div>
-
+                ?>
             </div>
         </div>
 
         <div class="basis-full sm:basis-10/12 lg:basis-6/12 lg:order-1 flex flex-col justify-center">
             <div class="mb-7 text-center lg:text-left">
                 <h1 class="text-basi-2 text-4xl lg:text-5xl font-semibold mb-7" style="line-height:135%;">
-                    Assista, navegue e jogue ao mesmo tempo!
+                    <?= $bannerHeadline ?>
                 </h1>
                 <p class="text-basi-4 text-lg lg:text-xl font-medium lg:pr-28" style="letter-spacing: 1px;">
-                    É isso mesmo! Nossa internet via fibra possui
-                    alta estabilidade e baixa latência, permitindo
-                    que você faça <span class="text-primary-1">tudo ao mesmo tempo</span>!
+                    <?= $bannerSubheadline ?>
                 </p>
             </div>
             <div class="flex flex-wrap gap-6 justify-center lg:justify-start">
@@ -45,7 +52,7 @@
                 \Helpers\Template::renderComponent('button', [
                     'prependIcon' => \Helpers\Url::asset('icon/whatsapp-white.svg'),
                     'text' => 'Eu quero internet',
-                    'href' => 'https://api.whatsapp.com/send?phone=' . CONF_WHATSAPP_NUMBER,
+                    'href' => \Helpers\Url::whatsappUrl('Olá, preciso de ajuda para escolher um plano de internet.', 'subscription'),
                     'target' => '_blank'
                 ]);
 
@@ -339,7 +346,7 @@
                         ],
                         [
                             'text' => '+55 00 0 0000-0000',
-                            'href' => 'https://api.whatsapp.com/tel=' . CONF_WHATSAPP_NUMBER,
+                            'href' => 'https://api.whatsapp.com/tel=',
                             'title' => '@netfacil no Whatsapp',
                             'icon' => \Helpers\Url::asset('icon/whatsapp-gray.svg'),
                             'target' => '_blank'

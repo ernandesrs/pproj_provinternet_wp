@@ -16,6 +16,20 @@ class Url
     }
 
     /**
+     * Get whatsapp url with number and message
+     *
+     * @param string $message
+     * @param string $channel
+     * @return string
+     */
+    static function whatsappUrl(string $message, string $channel = 'subscription')
+    {
+        $number = CONF_WHATSAPP_NUMBERS[$channel] ?? 'subscription';
+
+        return 'https://api.whatsapp.com/send?phone=' . $number . '&text=' . $message;
+    }
+
+    /**
      * Terms page url
      *
      * @return string
