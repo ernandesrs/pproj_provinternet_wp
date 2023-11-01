@@ -13,5 +13,7 @@
             "email": "ernandesrsouza@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "coffeecode/optimizer": "^2.1"
+    }
 }
