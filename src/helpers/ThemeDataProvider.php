@@ -17,25 +17,13 @@ class ThemeDataProvider
      */
     static function seo(string $page = 'home')
     {
-        $seoMeta = [
-            'title' => \Helpers\ThemeDataProvider::siteName(),
-            'description' => '',
-            'url' => '',
-            'cover' => '',
-            'index' => true
-        ];
-
-        if (key_exists($page, static::$pages)) {
-            $seoMeta = static::$pages[$page]::seo();
-        }
-
         return (new \CoffeeCode\Optimizer\Optimizer())
             ->optimize(
-                \Helpers\ThemeDataProvider::siteName() . ' - ' . $seoMeta['title'],
-                $seoMeta['description'],
-                $seoMeta['url'],
-                $seoMeta['cover'],
-                $seoMeta['index']
+                \Helpers\ThemeDataProvider::siteName() . ' - ' . cfs()->get('titulo', get_the_ID()) ?? '',
+                cfs()->get('descricao', get_the_ID()) ?? '',
+                get_permalink() ?? '',
+                cfs()->get('capa', get_the_ID()) ?? '',
+                cfs()->get('permitir_indexacao', get_the_ID()) ?? ''
             );
     }
 
