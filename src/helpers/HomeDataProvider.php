@@ -110,14 +110,60 @@ class HomeDataProvider
      */
     static function sectionPlans()
     {
+        $calcSpeed = function ($speed, $speedType) {
+            if ($speedType == 'megas') {
+                $speed = $speed / 8;
+            }
+
+            return $speed;
+        };
+
         /**
          * 
          * Allowed values to recurrence_period field:
          * monthly, yearly
          * 
          */
+        $recurrencePeriods = [
+            'mensal' => 'monthly',
+            'anual' => 'yearly'
+        ];
 
-        return [
+        $speedTypes = [
+            'megas' => 'MB/s',
+            'megabits' => 'Mb/s'
+        ];
+
+        $plansSection = [
+            'title' => cfs()->get('titulo_da_secao', get_the_ID()),
+            'subtitle' => cfs()->get('subtitulo_da_secao', get_the_ID())
+        ];
+
+        $plans = cfs()->get('lista_de_planos', get_the_ID());
+        if (!is_array($plans)) {
+            $plans = [];
+        }
+
+        $plans = array_map(function ($planId) use ($recurrencePeriods, $speedTypes, $calcSpeed) {
+            $plan = get_post_custom($planId);
+
+            return [
+                'title' => $plan['velocidade_do_download'][0] . ' ' . strtoupper($plan['tipo_de_medida_de_velocidade'][0]),
+                'features' => [
+                    'Download: ' . $calcSpeed($plan['velocidade_do_download'][0], $plan['tipo_de_medida_de_velocidade'][0]) . ' ' . $speedTypes['megabits'],
+                    'Upload: ' . $calcSpeed($plan['velocidade_do_download'][0], $plan['tipo_de_medida_de_velocidade'][0]) . ' ' . $speedTypes['megabits'],
+                    $plan['a_instalacao_e_gratuita'][0] ? 'Instalação grátis' : 'Instalação com taxa',
+                    $plan['o_roteador_e_gratuito'][0] ? 'Roteador grátis' : 'Roteador pago',
+                ],
+                'price' => $plan['preco_do_plano'][0],
+                'recurrence_period' => $recurrencePeriods[$plan['periodo_de_recorrencia'][0]],
+                'highlight' => false
+            ];
+        }, $plans);
+
+        return isset($plansSection['title']) && !empty($plansSection['title']) ? array_merge($plansSection, [
+            'plans' => $plans
+        ]) : [
             'title' => 'Planos',
             'subtitle' => 'Confira todos os nossos planos',
             'plans' => [
