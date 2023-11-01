@@ -27,7 +27,24 @@ class HomeDataProvider
      */
     static function sectionBanner()
     {
-        return [
+        $sectionBanner = [
+            'headline' => cfs()->get('titulo_do_banner', get_the_ID()),
+            'subheadline' => cfs()->get('subtitulo_do_banner', get_the_ID()),
+        ];
+
+        $features = cfs()->get('destaques_do_banner', get_the_ID());
+        if (!is_array($features)) {
+            $features = [];
+        }
+
+        $sectionBanner['features'] = array_map(function ($f) {
+            return [
+                'icon' => $f['icone_do_destaque'],
+                'text' => $f['texto_do_destaque']
+            ];
+        }, $features);
+
+        return isset($sectionBanner['headline']) && !empty($sectionBanner['headline']) ? $sectionBanner : [
             'features' => [
                 [
                     'icon' => 'router',
