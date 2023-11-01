@@ -1,4 +1,4 @@
-<footer class="min-h-[365px] flex items-center text-basi-4">
+<footer class="min-h-[365px] flex items-center text-basi-4 border-t border-basi-8">
     <div class="container">
         <div class="flex flex-wrap justify-center py-20">
             <div class="basis-full sm:basis-6/12 md:basis-4/12 mb-8 md:mb-0">

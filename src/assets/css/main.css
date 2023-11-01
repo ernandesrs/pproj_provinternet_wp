@@ -62,6 +62,27 @@ body {
     @apply text-base font-medium text-basi-3 text-opacity-75;
 }
 
+.banner-ilustration {
+    @apply z-0 flex items-center justify-center relative w-[275px] h-[275px] lg:w-[400px] lg:h-[400px] rounded-full border-[3px] border-primary-4 border-dashed;
+}
+
+.banner-ilustration::after {
+    content: '';
+    @apply absolute z-0 w-[200px] h-[200px] lg:w-[300px] lg:h-[300px] rounded-full border-[3px] border-primary-4;
+}
+
+.banner-ilustration>.hightlight {
+    @apply cursor-default w-full max-w-[250px] shadow-lg px-6 py-3 rounded-lg absolute z-40 bg-basi-11 bg-opacity-95 flex items-center;
+}
+
+.banner-ilustration>.hightlight>.icon {
+    @apply mr-5 text-5xl text-primary-4;
+}
+
+.banner-ilustration>.hightlight>span {
+    @apply text-base font-medium text-basi-3 text-opacity-75;
+}
+
 .circle-decoration {
     @apply hidden opacity-5 w-[725px] h-[725px] border-4 border-dashed border-primary-1 absolute rounded-full pointer-events-none;
 }
