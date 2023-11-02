@@ -152,9 +152,31 @@ class ThemeDataProvider
      *
      * @return array
      */
-    static function socials()
+    static function socials(string $iconStyle = 'primary')
     {
-        return [
+        $siteData = static::getSiteData();
+
+        $socials = [];
+
+        if ($siteData) {
+            $socialsMeta = cfs()->get('redes_sociais', $siteData->ID);
+
+            if (!is_array($socialsMeta)) {
+                $socialsMeta = [];
+            }
+
+            $socials = array_map(function ($s) use ($iconStyle) {
+                return [
+                    'text' => $s['nome_da_rede_social'],
+                    'href' => $s['link_do_perfil_na_rede_social'],
+                    'title' => $s['nome_da_rede_social'],
+                    'icon' => empty($s['icone_da_rede_social']) ? static::getIconBySocialUrl($s['link_do_perfil_na_rede_social'], $iconStyle) : $s['icone_da_rede_social'],
+                    'target' => '_blank'
+                ];
+            }, $socialsMeta);
+        }
+
+        return $siteData ? $socials : [
             [
                 'text' => 'Facebook',
                 'href' => CONF_SOCIALS['facebook'],
@@ -189,21 +211,41 @@ class ThemeDataProvider
         };
 
         $socials = array_map(function ($s) {
-
-            $socialName = explode('.', parse_url($s['href'], PHP_URL_HOST))[0];
-            $icon = '';
-
-            if (file_exists(__DIR__ . '/../../assets/icon/' . $socialName . '-gray.svg')) {
-                $icon = \Helpers\Url::asset('icon/' . $socialName . '-gray.svg');
-            }
-
             return [
-                ...$s,
-                'icon' => $icon,
+                ...$s
             ];
-        }, static::socials());
+        }, static::socials('gray'));
 
-        return array_merge($socials, [
+        $siteData = static::getSiteData();
+        $contacts = [];
+
+        if ($siteData) {
+            $contacts = [
+                [
+                    'text' => $numberFmt(cfs()->get('whatsapp_suporte', $siteData->ID)),
+                    'href' => \Helpers\Url::whatsappUrl('Olá, preciso de ajuda.', 'support'),
+                    'title' => 'Contato via Whatsapp',
+                    'icon' => \Helpers\Url::asset('icon/whatsapp-gray.svg'),
+                    'target' => '_blank'
+                ],
+                [
+                    'text' => cfs()->get('email_para_contatos', $siteData->ID),
+                    'href' => 'mailto:' . cfs()->get('email_para_contatos', $siteData->ID),
+                    'title' => 'Contato via email',
+                    'icon' => \Helpers\Url::asset('icon/envelope-gray.svg'),
+                    'target' => '_blank'
+                ],
+                [
+                    'text' => $numberFmt(cfs()->get('numero_para_ligacoes', $siteData->ID)),
+                    'href' => 'tel:' . cfs()->get('numero_para_ligacoes', $siteData->ID),
+                    'title' => 'Ligue para nós',
+                    'icon' => \Helpers\Url::asset('icon/telephone-gray.svg'),
+                    'target' => '_blank'
+                ]
+            ];
+        }
+
+        return array_merge($socials, $siteData ? $contacts : [
             [
                 'text' => $numberFmt(CONF_WHATSAPP_NUMBERS['support']),
                 'href' => \Helpers\Url::whatsappUrl('Olá, preciso de ajuda.', 'support'),
@@ -235,7 +277,23 @@ class ThemeDataProvider
      */
     static function address()
     {
-        return [
+        $siteData = static::getSiteData();
+        $address = [];
+
+        if ($siteData) {
+            $address = [
+                'map_location' => cfs()->get('localizacao_no_mapa', $siteData->ID),
+                'address' => [
+                    'street' => cfs()->get('nome_da_rua', $siteData->ID),
+                    'street_number' => cfs()->get('numero_da_rua', $siteData->ID),
+                    'city' => cfs()->get('nome_da_cidade', $siteData->ID),
+                    'state' => cfs()->get('sigla_do_estado', $siteData->ID),
+                    'neighborhood' => cfs()->get('nome_do_bairro', $siteData->ID),
+                ]
+            ];
+        }
+
+        return $siteData ? $address : [
             'map_location' => CONF_MAP_LOCATION,
             'address' => [
                 'street' => CONF_ADDRESS['street'],
@@ -254,6 +312,49 @@ class ThemeDataProvider
      */
     static function whatsappNumbers()
     {
-        return CONF_WHATSAPP_NUMBERS;
+        $siteData = static::getSiteData();
+
+        $whatsNumbers = null;
+        if ($siteData) {
+            $whatsNumbers = [
+                'support' => cfs()->get('whatsapp_suporte', $siteData->ID),
+                'subscription' => cfs()->get('whatsapp_assinaturas', $siteData->ID)
+            ];
+        }
+
+        return $whatsNumbers ? $whatsNumbers : CONF_WHATSAPP_NUMBERS;
+    }
+
+    /**
+     * Get site data
+     *
+     * @return null|\WP_Post
+     */
+    static function getSiteData()
+    {
+        $siteData = current(get_posts([
+            'post_type' => 'dados-do-site'
+        ]));
+
+        return $siteData ? $siteData : null;
+    }
+
+    /**
+     * Get icon by socil href
+     *
+     * @param string $url
+     * @param string $color
+     * @return string
+     */
+    static function getIconBySocialUrl(string $url, string $color = 'primary')
+    {
+        $socialName = explode('.', parse_url($url, PHP_URL_HOST))[0];
+        $icon = '';
+
+        if (file_exists(__DIR__ . '/../../assets/icon/' . $socialName . '-' . $color . '.svg')) {
+            $icon = \Helpers\Url::asset('icon/' . $socialName . '-' . $color . '.svg');
+        }
+
+        return $icon;
     }
 }
