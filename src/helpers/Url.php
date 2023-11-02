@@ -36,7 +36,17 @@ class Url
      */
     static function urlPrivacyTermsPage()
     {
-        return static::url('?page=terms');
+        $pageData = \Helpers\ThemeDataProvider::getSiteData();
+        $pageTermsUrl = '';
+
+        if ($pageData) {
+            $pageTermsId = current(cfs()->get('termos_de_privacidade', $pageData->ID) ?? []);
+            if ($pageTermsId) {
+                $pageTermsUrl = get_permalink($pageTermsId);
+            }
+        }
+
+        return $pageTermsUrl ? $pageTermsUrl : static::url('?page=terms');
     }
 
     /**
