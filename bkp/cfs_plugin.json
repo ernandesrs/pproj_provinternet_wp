@@ -1,0 +1,829 @@
+[
+    {
+        "post_title": "[ Planos ] Detalhes do plano",
+        "post_name": "planos-detalhes-do-plano",
+        "cfs_extras": {
+            "order": "0",
+            "context": "normal",
+            "hide_editor": "0"
+        },
+        "cfs_fields": [
+            {
+                "id": "1",
+                "name": "tipo_de_medida_de_velocidade",
+                "label": "Tipo de medida de velocidade",
+                "type": "select",
+                "notes": "",
+                "parent_id": 0,
+                "weight": 0,
+                "options": {
+                    "choices": {
+                        "megas": "Megas",
+                        "megabits": "Megabits"
+                    },
+                    "multiple": "0",
+                    "select2": "0",
+                    "required": "1"
+                }
+            },
+            {
+                "id": "2",
+                "name": "velocidade_do_download",
+                "label": "Velocidade do download",
+                "type": "text",
+                "notes": "",
+                "parent_id": 0,
+                "weight": 1,
+                "options": {
+                    "default_value": "",
+                    "required": "1"
+                }
+            },
+            {
+                "id": "3",
+                "name": "velocidade_do_upload",
+                "label": "Velocidade do upload",
+                "type": "text",
+                "notes": "",
+                "parent_id": 0,
+                "weight": 2,
+                "options": {
+                    "default_value": "",
+                    "required": "1"
+                }
+            },
+            {
+                "id": "4",
+                "name": "a_instalacao_e_gratuita",
+                "label": "A instala\u00e7\u00e3o \u00e9 gratuita?",
+                "type": "true_false",
+                "notes": "",
+                "parent_id": 0,
+                "weight": 3,
+                "options": {
+                    "message": "Sim, \u00e9 gratuito.",
+                    "required": "0"
+                }
+            },
+            {
+                "id": "5",
+                "name": "o_roteador_e_gratuito",
+                "label": "O roteador \u00e9 gratuito?",
+                "type": "true_false",
+                "notes": "",
+                "parent_id": 0,
+                "weight": 4,
+                "options": {
+                    "message": "Sim, \u00e9 gratuito.",
+                    "required": "0"
+                }
+            },
+            {
+                "id": "6",
+                "name": "preco_do_plano",
+                "label": "Pre\u00e7o do plano",
+                "type": "text",
+                "notes": "",
+                "parent_id": 0,
+                "weight": 5,
+                "options": {
+                    "default_value": "",
+                    "required": "1"
+                }
+            },
+            {
+                "id": "7",
+                "name": "periodo_de_recorrencia",
+                "label": "Per\u00edodo de recorr\u00eancia",
+                "type": "select",
+                "notes": "",
+                "parent_id": 0,
+                "weight": 6,
+                "options": {
+                    "choices": {
+                        "mensal": "Mensal",
+                        "anual": "Anual"
+                    },
+                    "multiple": "0",
+                    "select2": "0",
+                    "required": "1"
+                }
+            }
+        ],
+        "cfs_rules": {
+            "post_types": {
+                "operator": "==",
+                "values": [
+                    "planos"
+                ]
+            }
+        }
+    },
+    {
+        "post_title": "[ SEO ] Informa\u00e7\u00f5es para SEO",
+        "post_name": "seo-informacoes-para-seo",
+        "cfs_extras": {
+            "order": "0",
+            "context": "normal",
+            "hide_editor": "0"
+        },
+        "cfs_fields": [
+            {
+                "id": 8,
+                "name": "titulo",
+                "label": "T\u00edtulo",
+                "type": "text",
+                "notes": "",
+                "parent_id": 0,
+                "weight": 0,
+                "options": {
+                    "default_value": "",
+                    "required": "1"
+                }
+            },
+            {
+                "id": 9,
+                "name": "descricao",
+                "label": "Descri\u00e7\u00e3o",
+                "type": "textarea",
+                "notes": "Uma descri\u00e7\u00e3o boa para o conte\u00fado, isso ajudar\u00e1 os sistemas de buscas encontrar este conte\u00fado.",
+                "parent_id": 0,
+                "weight": 1,
+                "options": {
+                    "default_value": "",
+                    "formatting": "none",
+                    "required": "1"
+                }
+            },
+            {
+                "id": 10,
+                "name": "capa",
+                "label": "Capa",
+                "type": "file",
+                "notes": "Capa para o conte\u00fado. Isso aparecer\u00e1 quando este conte\u00fado for compartilhado em redes sociais.",
+                "parent_id": 0,
+                "weight": 2,
+                "options": {
+                    "file_type": "image",
+                    "return_value": "url",
+                    "required": "0"
+                }
+            },
+            {
+                "id": 11,
+                "name": "permitir_indexacao",
+                "label": "Permitir indexa\u00e7\u00e3o",
+                "type": "true_false",
+                "notes": "Ao marcar, o Google e outros sistemas de buscas poder\u00e3o encontrar esta p\u00e1gina.",
+                "parent_id": 0,
+                "weight": 3,
+                "options": {
+                    "message": "Sim, indexar.",
+                    "required": "0"
+                }
+            }
+        ],
+        "cfs_rules": {
+            "post_types": {
+                "operator": "==",
+                "values": [
+                    "post",
+                    "page"
+                ]
+            }
+        }
+    },
+    {
+        "post_title": "[ Home ] Se\u00e7\u00e3o banner",
+        "post_name": "home-secao-banner",
+        "cfs_extras": {
+            "order": "0",
+            "context": "normal",
+            "hide_editor": "0"
+        },
+        "cfs_fields": [
+            {
+                "id": "12",
+                "name": "titulo_do_banner",
+                "label": "T\u00edtulo do banner",
+                "type": "text",
+                "notes": "",
+                "parent_id": 0,
+                "weight": 0,
+                "options": {
+                    "default_value": "",
+                    "required": "0"
+                }
+            },
+            {
+                "id": "13",
+                "name": "subtitulo_do_banner",
+                "label": "Subt\u00edtulo do banner",
+                "type": "textarea",
+                "notes": "",
+                "parent_id": 0,
+                "weight": 1,
+                "options": {
+                    "default_value": "",
+                    "formatting": "none",
+                    "required": "1"
+                }
+            },
+            {
+                "id": "14",
+                "name": "destaques_do_banner",
+                "label": "Destaques do banner",
+                "type": "loop",
+                "notes": "",
+                "parent_id": 0,
+                "weight": 2,
+                "options": {
+                    "row_display": "0",
+                    "row_label": "Destaque",
+                    "button_label": "Novo destaque",
+                    "limit_min": "3",
+                    "limit_max": "3"
+                }
+            },
+            {
+                "id": "15",
+                "name": "icone_do_destaque",
+                "label": "\u00cdcone do destaque",
+                "type": "text",
+                "notes": "Nome do \u00edcone. Este site utiliza a biblioteca de \u00edcones do Google, obtenha o nome de um \u00edcone em: https:\/\/fonts.google.com\/icons",
+                "parent_id": 14,
+                "weight": 3,
+                "options": {
+                    "default_value": "apps",
+                    "required": "0"
+                }
+            },
+            {
+                "id": "16",
+                "name": "texto_do_destaque",
+                "label": "Texto do destaque",
+                "type": "text",
+                "notes": "",
+                "parent_id": 14,
+                "weight": 4,
+                "options": {
+                    "default_value": "",
+                    "required": "0"
+                }
+            }
+        ],
+        "cfs_rules": {
+            "page_templates": {
+                "operator": "==",
+                "values": [
+                    "page-home.php"
+                ]
+            }
+        }
+    },
+    {
+        "post_title": "[ Home ] Se\u00e7\u00e3o destaques",
+        "post_name": "home-secao-destaques",
+        "cfs_extras": {
+            "order": "0",
+            "context": "normal",
+            "hide_editor": "0"
+        },
+        "cfs_fields": [
+            {
+                "id": "17",
+                "name": "destaques",
+                "label": "Destaques",
+                "type": "loop",
+                "notes": "",
+                "parent_id": 0,
+                "weight": 0,
+                "options": {
+                    "row_display": "0",
+                    "row_label": "Destaque",
+                    "button_label": "Novo destaque",
+                    "limit_min": "1",
+                    "limit_max": "6"
+                }
+            },
+            {
+                "id": "18",
+                "name": "icone_do_destaque",
+                "label": "\u00cdcone do destaque",
+                "type": "text",
+                "notes": "Nome do \u00edcone. Este site utiliza a biblioteca de \u00edcones do Google, obtenha o nome de um \u00edcone em: https:\/\/fonts.google.com\/icons",
+                "parent_id": 17,
+                "weight": 1,
+                "options": {
+                    "default_value": "apps",
+                    "required": "1"
+                }
+            },
+            {
+                "id": "19",
+                "name": "titulo_do_destaque",
+                "label": "T\u00edtulo do destaque",
+                "type": "text",
+                "notes": "",
+                "parent_id": 17,
+                "weight": 2,
+                "options": {
+                    "default_value": "CONSETUR ADIPICING",
+                    "required": "0"
+                }
+            },
+            {
+                "id": "20",
+                "name": "descricao_do_destaque",
+                "label": "Descri\u00e7\u00e3o do destaque",
+                "type": "textarea",
+                "notes": "",
+                "parent_id": 17,
+                "weight": 3,
+                "options": {
+                    "default_value": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit, veniam.",
+                    "formatting": "none",
+                    "required": "0"
+                }
+            }
+        ],
+        "cfs_rules": {
+            "page_templates": {
+                "operator": "==",
+                "values": [
+                    "page-home.php"
+                ]
+            }
+        }
+    },
+    {
+        "post_title": "[ Home ] Se\u00e7\u00e3o planos",
+        "post_name": "home-secao-planos",
+        "cfs_extras": {
+            "order": "0",
+            "context": "normal",
+            "hide_editor": "0"
+        },
+        "cfs_fields": [
+            {
+                "id": "21",
+                "name": "titulo_da_secao_planos",
+                "label": "T\u00edtulo da se\u00e7\u00e3o",
+                "type": "text",
+                "notes": "",
+                "parent_id": 0,
+                "weight": 0,
+                "options": {
+                    "default_value": "Planos",
+                    "required": "1"
+                }
+            },
+            {
+                "id": "22",
+                "name": "subtitulo_da_secao_planos",
+                "label": "Subt\u00edtulo da se\u00e7\u00e3o",
+                "type": "text",
+                "notes": "",
+                "parent_id": 0,
+                "weight": 1,
+                "options": {
+                    "default_value": "Confira todos os nossos planos",
+                    "required": "1"
+                }
+            },
+            {
+                "id": "23",
+                "name": "lista_de_planos",
+                "label": "Lista de planos",
+                "type": "relationship",
+                "notes": "Cadastre os planos clicando no item de menu 'Planos' > 'Adicionar novo' e escolha abaixo os planos a serem exibidos na p\u00e1gina inicial.",
+                "parent_id": 0,
+                "weight": 2,
+                "options": {
+                    "post_types": [
+                        "planos"
+                    ],
+                    "limit_min": "",
+                    "limit_max": ""
+                }
+            }
+        ],
+        "cfs_rules": {
+            "page_templates": {
+                "operator": "==",
+                "values": [
+                    "page-home.php"
+                ]
+            }
+        }
+    },
+    {
+        "post_title": "[ Home ] Se\u00e7\u00e3o clientes",
+        "post_name": "home-secao-clientes",
+        "cfs_extras": {
+            "order": "0",
+            "context": "normal",
+            "hide_editor": "0"
+        },
+        "cfs_fields": [
+            {
+                "id": "24",
+                "name": "titulo_da_secao_clientes",
+                "label": "T\u00edtulo da se\u00e7\u00e3o",
+                "type": "text",
+                "notes": "",
+                "parent_id": 0,
+                "weight": 0,
+                "options": {
+                    "default_value": "Clientes",
+                    "required": "0"
+                }
+            },
+            {
+                "id": "25",
+                "name": "subtitulo_da_secao_clientes",
+                "label": "Subt\u00edtulo da se\u00e7\u00e3o",
+                "type": "text",
+                "notes": "",
+                "parent_id": 0,
+                "weight": 1,
+                "options": {
+                    "default_value": "O que os nossos clientes dizem",
+                    "required": "0"
+                }
+            },
+            {
+                "id": "26",
+                "name": "lista_de_depoimentos",
+                "label": "Lista de depoimentos",
+                "type": "loop",
+                "notes": "",
+                "parent_id": 0,
+                "weight": 2,
+                "options": {
+                    "row_display": "0",
+                    "row_label": "Depoimento",
+                    "button_label": "Novo depoimento",
+                    "limit_min": "4",
+                    "limit_max": "4"
+                }
+            },
+            {
+                "id": "27",
+                "name": "foto_do_cliente",
+                "label": "Foto do cliente",
+                "type": "file",
+                "notes": "Tamanho recomendado \u00e9 60x60px no m\u00ednimo e m\u00e1ximo 100x100px.",
+                "parent_id": 26,
+                "weight": 3,
+                "options": {
+                    "file_type": "image",
+                    "return_value": "url",
+                    "required": "0"
+                }
+            },
+            {
+                "id": "28",
+                "name": "nome_do_cliente",
+                "label": "Nome do cliente",
+                "type": "text",
+                "notes": "",
+                "parent_id": 26,
+                "weight": 4,
+                "options": {
+                    "default_value": "Client Name",
+                    "required": "0"
+                }
+            },
+            {
+                "id": "29",
+                "name": "destaque_do_depoimento",
+                "label": "Destaque do depoimento",
+                "type": "text",
+                "notes": "Escolha uma parte importante o depoimento para chamar a aten\u00e7\u00e3o.",
+                "parent_id": 26,
+                "weight": 5,
+                "options": {
+                    "default_value": "Lorem ipsum dolor",
+                    "required": "0"
+                }
+            },
+            {
+                "id": "30",
+                "name": "detalhes_do_depoimento",
+                "label": "Detalhes do depoimento",
+                "type": "textarea",
+                "notes": "",
+                "parent_id": 26,
+                "weight": 6,
+                "options": {
+                    "default_value": "Lorem ipsum dolor, natus dolor sitin datus. Only nutis uistu loken nadis ilastu unranin ila nanad uiqui.",
+                    "formatting": "none",
+                    "required": "0"
+                }
+            }
+        ],
+        "cfs_rules": {
+            "page_templates": {
+                "operator": "==",
+                "values": [
+                    "page-home.php"
+                ]
+            }
+        }
+    },
+    {
+        "post_title": "[ Dados do site ] Contatos",
+        "post_name": "dados-do-site-contatos",
+        "cfs_extras": {
+            "order": "0",
+            "context": "normal",
+            "hide_editor": "0"
+        },
+        "cfs_fields": [
+            {
+                "id": 32,
+                "name": "whatsapp_suporte",
+                "label": "Whatsapp - Suporte",
+                "type": "text",
+                "notes": "N\u00famero de WhatsApp para atendimentos relacionados a suporte.",
+                "parent_id": 0,
+                "weight": 0,
+                "options": {
+                    "default_value": "",
+                    "required": "1"
+                }
+            },
+            {
+                "id": 33,
+                "name": "whatsapp_assinaturas",
+                "label": "Whatsapp - Assinaturas",
+                "type": "text",
+                "notes": "N\u00famero de WhatsApp para atendimentos relacionados a assinaturas.",
+                "parent_id": 0,
+                "weight": 1,
+                "options": {
+                    "default_value": "",
+                    "required": "1"
+                }
+            },
+            {
+                "id": 34,
+                "name": "numero_para_ligacoes",
+                "label": "N\u00famero para liga\u00e7\u00f5es",
+                "type": "text",
+                "notes": "Um n\u00famero para receber liga\u00e7\u00f5es.",
+                "parent_id": 0,
+                "weight": 2,
+                "options": {
+                    "default_value": "",
+                    "required": "0"
+                }
+            },
+            {
+                "id": 35,
+                "name": "email_para_contatos",
+                "label": "Email para contatos",
+                "type": "text",
+                "notes": "Um email para contato em geral.",
+                "parent_id": 0,
+                "weight": 3,
+                "options": {
+                    "default_value": "",
+                    "required": "0"
+                }
+            }
+        ],
+        "cfs_rules": {
+            "post_types": {
+                "operator": "==",
+                "values": [
+                    "dados-do-site"
+                ]
+            }
+        }
+    },
+    {
+        "post_title": "[ Dados do site ] Endere\u00e7o e localiza\u00e7\u00e3o",
+        "post_name": "dados-do-site-endereco-e-localizacao",
+        "cfs_extras": {
+            "order": "0",
+            "context": "normal",
+            "hide_editor": "0"
+        },
+        "cfs_fields": [
+            {
+                "id": "36",
+                "name": "localizacao_no_mapa",
+                "label": "Localiza\u00e7\u00e3o no mapa",
+                "type": "text",
+                "notes": "Como conseguir? Acesse o Google Maps > Escolha o local > Compartilhar > Incorporar um mapa > No c\u00f3digo obtido, copie tudo que estiver entre https:\/\/www.google.com\/maps\/embed?pb= e a primeira aspa que encontrar ap\u00f3s.",
+                "parent_id": 0,
+                "weight": 0,
+                "options": {
+                    "default_value": "",
+                    "required": "0"
+                }
+            },
+            {
+                "id": 37,
+                "name": "nome_da_rua",
+                "label": "Nome da rua",
+                "type": "text",
+                "notes": "",
+                "parent_id": 0,
+                "weight": 1,
+                "options": {
+                    "default_value": "Rua Lorem Street",
+                    "required": "1"
+                }
+            },
+            {
+                "id": 38,
+                "name": "numero_da_rua",
+                "label": "N\u00famero da rua",
+                "type": "text",
+                "notes": "",
+                "parent_id": 0,
+                "weight": 2,
+                "options": {
+                    "default_value": "2046",
+                    "required": "1"
+                }
+            },
+            {
+                "id": 39,
+                "name": "nome_do_bairro",
+                "label": "Nome do bairro",
+                "type": "text",
+                "notes": "",
+                "parent_id": 0,
+                "weight": 3,
+                "options": {
+                    "default_value": "Lorem Bordhood",
+                    "required": "1"
+                }
+            },
+            {
+                "id": 40,
+                "name": "nome_da_cidade",
+                "label": "Nome da cidade",
+                "type": "text",
+                "notes": "",
+                "parent_id": 0,
+                "weight": 4,
+                "options": {
+                    "default_value": "Lorem City",
+                    "required": "1"
+                }
+            },
+            {
+                "id": 41,
+                "name": "sigla_do_estado",
+                "label": "Sigla do estado",
+                "type": "text",
+                "notes": "",
+                "parent_id": 0,
+                "weight": 5,
+                "options": {
+                    "default_value": "LS",
+                    "required": "1"
+                }
+            }
+        ],
+        "cfs_rules": {
+            "post_types": {
+                "operator": "==",
+                "values": [
+                    "dados-do-site"
+                ]
+            }
+        }
+    },
+    {
+        "post_title": "[ Dados do site ] Redes sociais",
+        "post_name": "dados-do-site-redes-sociais",
+        "cfs_extras": {
+            "order": "0",
+            "context": "normal",
+            "hide_editor": "0"
+        },
+        "cfs_fields": [
+            {
+                "id": "42",
+                "name": "redes_sociais",
+                "label": "Redes sociais",
+                "type": "loop",
+                "notes": "",
+                "parent_id": 0,
+                "weight": 0,
+                "options": {
+                    "row_display": "0",
+                    "row_label": "Rede social",
+                    "button_label": "Nova rede social",
+                    "limit_min": "",
+                    "limit_max": ""
+                }
+            },
+            {
+                "id": 43,
+                "name": "icone_da_rede_social",
+                "label": "\u00cdcone da rede social",
+                "type": "file",
+                "notes": "Tamanho recomendado: 30 x 30 pixels.",
+                "parent_id": 42,
+                "weight": 1,
+                "options": {
+                    "file_type": "image",
+                    "return_value": "url",
+                    "required": "0"
+                }
+            },
+            {
+                "id": 44,
+                "name": "nome_da_rede_social",
+                "label": "Nome da rede social",
+                "type": "text",
+                "notes": "",
+                "parent_id": 42,
+                "weight": 2,
+                "options": {
+                    "default_value": "",
+                    "required": "1"
+                }
+            },
+            {
+                "id": 45,
+                "name": "link_do_perfil_na_rede_social",
+                "label": "Link do perfil na rede social",
+                "type": "text",
+                "notes": "",
+                "parent_id": 42,
+                "weight": 3,
+                "options": {
+                    "default_value": "",
+                    "required": "1"
+                }
+            }
+        ],
+        "cfs_rules": {
+            "post_types": {
+                "operator": "==",
+                "values": [
+                    "dados-do-site"
+                ]
+            }
+        }
+    },
+    {
+        "post_title": "[ Dados do site ] Termos",
+        "post_name": "dados-do-site-termos",
+        "cfs_extras": {
+            "order": "0",
+            "context": "normal",
+            "hide_editor": "0"
+        },
+        "cfs_fields": [
+            {
+                "id": 46,
+                "name": "termos_de_privacidade",
+                "label": "Termos de privacidade",
+                "type": "relationship",
+                "notes": "Escolha a p\u00e1gina que cont\u00e9m os termos de privacidade.",
+                "parent_id": 0,
+                "weight": 0,
+                "options": {
+                    "post_types": [
+                        "page"
+                    ],
+                    "limit_min": "1",
+                    "limit_max": "1"
+                }
+            },
+            {
+                "id": 47,
+                "name": "termos_de_uso",
+                "label": "Termos de uso",
+                "type": "relationship",
+                "notes": "Escolha a p\u00e1gina que tem os termos de uso.",
+                "parent_id": 0,
+                "weight": 1,
+                "options": {
+                    "post_types": [
+                        "page"
+                    ],
+                    "limit_min": "1",
+                    "limit_max": "1"
+                }
+            }
+        ],
+        "cfs_rules": {
+            "post_types": {
+                "operator": "==",
+                "values": [
+                    "dados-do-site"
+                ]
+            }
+        }
+    }
+]

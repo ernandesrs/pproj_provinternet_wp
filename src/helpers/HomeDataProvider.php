@@ -135,8 +135,8 @@ class HomeDataProvider
         ];
 
         $plansSection = [
-            'title' => cfs()->get('titulo_da_secao', get_the_ID()),
-            'subtitle' => cfs()->get('subtitulo_da_secao', get_the_ID())
+            'title' => cfs()->get('titulo_da_secao_planos', get_the_ID()),
+            'subtitle' => cfs()->get('subtitulo_da_secao_planos', get_the_ID())
         ];
 
         $plans = cfs()->get('lista_de_planos', get_the_ID());
@@ -215,8 +215,8 @@ class HomeDataProvider
     static function sectionTestmonials()
     {
         $sectionTestmonials = [
-            'title' => cfs()->get('titulo_da_secao', get_the_ID()),
-            'subtitle' => cfs()->get('subtitulo_da_secao', get_the_ID()),
+            'title' => cfs()->get('titulo_da_secao_clientes', get_the_ID()),
+            'subtitle' => cfs()->get('subtitulo_da_secao_clientes', get_the_ID()),
             'testmonials' => []
         ];
 
